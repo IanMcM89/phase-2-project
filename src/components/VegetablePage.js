@@ -3,7 +3,7 @@ import VegetableCardTable from "./VegetableCardTable";
 
 function VegetablePage() {
     return (
-      <main className="main-container">
+      <main className="App-main">
         <VegetableCardTable />
       </main>
     );
