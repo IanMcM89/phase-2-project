@@ -1,5 +1,5 @@
 import React from "react";
-import VegetableCard from "./PlantCard";
+import VegetableCard from "./VegetableCard";
 
 function VegetableCardTable() {
   return (

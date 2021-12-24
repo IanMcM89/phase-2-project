@@ -1,0 +1,44 @@
+{
+    "vegetables": [
+      {
+        "id": 1,
+        "name": "Onion",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 2,
+        "name": "Garlic",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 3,
+        "name": "Celery",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 4,
+        "name": "Carrot",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 5,
+        "name": "Potato",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 6,
+        "name": "Tomato",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 7,
+        "name": "Lettuce",
+        "image": "./images/image-placeholder-icon.png"
+      },
+      {
+        "id": 8,
+        "name": "Turnip",
+        "image": "./images/image-placeholder-icon.png"
+      }
+    ]
+  }
