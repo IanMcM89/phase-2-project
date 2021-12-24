@@ -1,11 +1,12 @@
 import React from "react";
+import VegetableCardTable from "./VegetableCardTable";
 
 function VegetablePage() {
     return (
       <main className="main-container">
-        Vegetable page goes here
+        <VegetableCardTable />
       </main>
     );
-  }
+}
 
 export default VegetablePage;
