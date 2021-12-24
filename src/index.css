@@ -26,6 +26,21 @@ body {
   margin: 0;
 }
 
+.vegetable-card-table {
+  display: -ms-inline-grid;
+  width: 96%;
+  height: auto;
+  margin: 2%;
+}
+
+.vegetable-card {
+  background-color: gray;
+  display: inline-flex;
+  width: 18%;
+  height: 46%;
+  margin: 1%;
+}
+
 .App-footer {
   display: flex;
   background-color: black;
