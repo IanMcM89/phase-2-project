@@ -40,5 +40,12 @@
         "name": "Turnip",
         "image": "./images/image-placeholder-icon.png"
       }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "ianmcm89",
+        "password": "password"
+      }
     ]
-  }
+}
