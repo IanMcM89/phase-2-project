@@ -35,7 +35,7 @@ body {
 }
 
 #App-login-form {
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(231, 231, 231);
   box-shadow: gray 2px 2px 2px 2px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -103,7 +103,9 @@ body {
 }
 
 .vegetable-card {
-  background-color: gray;
+  background-color: rgb(231, 231, 231);
+  box-shadow: gray 2px 2px 2px 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: inline-flex;
   width: 18%;
   height: 46%;
