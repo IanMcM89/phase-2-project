@@ -69,11 +69,12 @@ body {
 #login-inputs-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 40%;
-  height: 20%;
+  height: 30%;
   margin: 30%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .login-input {

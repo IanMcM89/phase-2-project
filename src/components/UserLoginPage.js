@@ -21,7 +21,7 @@ function UserLoginPage({ history, onUserLogin }) {
     fetch("http://localhost:3000/users")
     .then(r => r.json())
     .then(userData => userData.filter(user => {
-      if (user.username === formData.username && user.password === formData.password) {
+      if (user.username.includes(formData.username) && user.password.includes(formData.password)) {
         return onUserLogin() & history.push("/");
       } else {
         return setLoginError('Login failed! Incorrect username or password.');
