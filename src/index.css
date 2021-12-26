@@ -1,4 +1,6 @@
 body {
+  background-image: linear-gradient(45deg, rgba(196, 196, 196, 0.596) 22%, rgba(158, 158, 158, 0.205) 64%), url("/public/images/lettuce-background.jpg");
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -10,32 +12,67 @@ body {
   margin: 0;
 }
 
-.App-header {
-  background-color: forestgreen;
+/* .App-header {
+  background-image: linear-gradient(#15c942, #1a642c);
   color: white;
   display: flex;
   width: 100vw;
   height: 10vh;
   margin: 0;
+} */
+
+.App-header {
+  height: 25%;
+  position: relative;
+  z-index: 10;
+}
+
+.App-header:before,
+.App-header:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100%;
+  background: transparent;
+}
+
+.App-header:after {
+  -webkit-mask:
+    radial-gradient(100% 80% at top   ,white 79.5%,transparent 80%) left,
+    radial-gradient(100% 80% at bottom,transparent 79.5%,white 80%) right;
+  mask:
+    radial-gradient(100% 80% at top   ,white 79.5%,transparent 80%) left,
+    radial-gradient(100% 80% at bottom,transparent 79.5%,white 80%) right;
+  -webkit-mask-size:50.1% 100%;
+  -webkit-mask-repeat:no-repeat;
+  mask-size:50.1% 100%;
+  mask-repeat:no-repeat;
+  background:linear-gradient(to bottom right, darkgreen, lightgreen);
 }
 
 .App-main {
-  background-image: linear-gradient(45deg, rgba(196, 196, 196, 0.596) 22%, rgba(158, 158, 158, 0.205) 64%), url("/public/images/lettuce-background.jpg");
-  background-size: cover;
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   margin: 0;
+  z-index: 1;
 }
 
 #App-login-main {
-  background-image: linear-gradient(45deg, rgba(196, 196, 196, 0.596) 22%, rgba(158, 158, 158, 0.205) 64%), url("/public/images/lettuce-background.jpg");
-  background-size: cover;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   margin: 0;
+  z-index: 1;
 }
 
 #App-login-form {
@@ -47,7 +84,7 @@ body {
   width: 40%;
   height: 90%;
   margin: 30%;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-bottom: 5%;
 }
 
@@ -115,6 +152,7 @@ body {
   width: 96%;
   height: auto;
   margin: 2%;
+  margin-top: 8%;
 }
 
 .vegetable-card {
@@ -128,10 +166,13 @@ body {
 }
 
 .App-footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
   background-color: black;
   color: white;
   width: 100vw;
   height: 10vh;
   margin: 0;
+  z-index: 9;
 }
