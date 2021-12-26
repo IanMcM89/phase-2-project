@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import Login from "./Login";
+import UserLoginPage from "./UserLoginPage";
+import NewUserPage from "./NewUserPage";
 import VegetablePage from "./VegetablePage";
 import Footer from "./Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -19,11 +20,14 @@ function App() {
       <Header />
       <BrowserRouter>
         <Switch>
+          <Route path="/create-account">
+            <NewUserPage />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
           <Route exact path="/">
-            <Login />
+            <UserLoginPage />
           </Route>
         </Switch>
       </BrowserRouter>
