@@ -26,6 +26,64 @@ body {
   margin: 0;
 }
 
+#App-login-main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 80vh;
+  margin: 0;
+}
+
+#App-login-form {
+  box-shadow: black 2px 2px 2px 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 90%;
+  margin: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#App-login-form h1 {
+  display: flex;
+  justify-content: center;
+  font-family: inherit;
+  width: 90%;
+  height: 10%;
+  margin: 5%;
+}
+
+#login-inputs-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 20%;
+  margin: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.login-input {
+  width: auto;
+  height: fit-content;
+  margin: 5%
+}
+
+.login-input input {
+  font-family: inherit;
+  width: 100%;
+}
+
+#login-submit {
+  font-family: inherit;
+  background-color: lightgreen;
+  width: 40%;
+  height: auto;
+  margin: auto;
+}
+
 .vegetable-card-table {
   display: -ms-inline-grid;
   width: 96%;

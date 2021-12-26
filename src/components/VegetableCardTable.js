@@ -5,6 +5,13 @@ function VegetableCardTable() {
   return (
     <div className="vegetable-card-table">
       <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
+      <VegetableCard />
     </div>
   );
 }
