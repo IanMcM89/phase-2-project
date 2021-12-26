@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Header from "./Header";
 import UserLoginPage from "./UserLoginPage";
 import NewUserPage from "./NewUserPage";
-import Home from "./Home";
+import VegetablePage from "./VegetablePage";
 import Footer from "./Footer";
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function App() {
             <UserLoginPage onUserLogin={onUserLogin} history={history }/>
           </Route>
           <Route exact path="/">
-            <Home isSignedIn={isSignedIn} />
+            <VegetablePage isSignedIn={isSignedIn} />
           </Route>
         </Switch>
       </BrowserRouter>
