@@ -11,7 +11,7 @@ body {
 }
 
 .App-header {
-  background-color: black;
+  background-color: forestgreen;
   color: white;
   display: flex;
   width: 100vw;
@@ -35,7 +35,7 @@ body {
 }
 
 #App-login-form {
-  box-shadow: black 2px 2px 2px 2px;
+  box-shadow: gray 2px 2px 2px 2px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
