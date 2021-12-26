@@ -5,7 +5,7 @@ function NewUserPage() {
       <main id="App-login-main">
           <form id="App-login-form">
             <h1>Create New Account</h1>
-            <p>Enter new username and password:</p>
+            <p className="login-message">Enter new username and password:</p>
             <div id="login-inputs-container">
               <div className="login-input">
                 <input type="text" name="username" placeholder="New Username" />

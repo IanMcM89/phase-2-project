@@ -1,20 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./Header";
 import UserLoginPage from "./UserLoginPage";
 import NewUserPage from "./NewUserPage";
-import VegetablePage from "./VegetablePage";
+import Home from "./Home";
 import Footer from "./Footer";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-function Home() {
-  return (
-    <div>
-      <VegetablePage />
-    </div>
-  );
-}
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const history = useHistory();
+
+  function onUserLogin() {
+    setIsSignedIn(!isSignedIn);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -23,11 +22,11 @@ function App() {
           <Route path="/create-account">
             <NewUserPage />
           </Route>
-          <Route path="/home">
-            <Home />
+          <Route path="/login">
+            <UserLoginPage onUserLogin={onUserLogin} history={history }/>
           </Route>
           <Route exact path="/">
-            <UserLoginPage />
+            <Home isSignedIn={isSignedIn} />
           </Route>
         </Switch>
       </BrowserRouter>
