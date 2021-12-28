@@ -33,7 +33,7 @@ function UserLoginPage({ history, onUserLogin }) {
     <main id="App-login-main">
       <form id="App-login-form" onSubmit={handleSubmit}>
         <h1>User Login</h1>
-        <p className="login-message">Welcome to My Little Black Book: Vegetable Edition!</p>
+        <p className="login-message">Welcome to My Gardener's Black Book!</p>
         <p className="login-new-user-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
         <div id="login-inputs-container">
           <div className="login-input">
@@ -56,7 +56,7 @@ function UserLoginPage({ history, onUserLogin }) {
           </div>
         </div>
         <p className="login-error">{loginError}</p>
-        <input id="login-submit" type="submit" value="Submit"/>
+        <input id="login-submit" type="submit" value="Sign In"/>
       </form>
     </main>
   );
