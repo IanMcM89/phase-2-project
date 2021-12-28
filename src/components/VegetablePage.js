@@ -1,13 +1,17 @@
 import React from "react";
-import VegetableCardTable from "./VegetableCardTable";
+import VegetableCard from "./VegetableCard";
 import { Redirect } from "react-router-dom";
 
-function VegetablePage({ isSignedIn }) {
+function VegetablePage({ isSignedIn, userVegetables }) {
   if (!isSignedIn) return <Redirect to="/login" />;
+
+  const vegetablesToBeDisplayed = userVegetables.map(veggie => <VegetableCard key={veggie.id} veggie={veggie}/>);
 
   return (
     <main className="App-main">
-      <VegetableCardTable />
+      <div className="vegetable-card-table">
+        {vegetablesToBeDisplayed}
+      </div>
     </main>
   );
 }

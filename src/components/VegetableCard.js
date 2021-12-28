@@ -1,9 +1,9 @@
 import React from "react";
 
-function VegetableCard() {
+function VegetableCard({ veggie }) {
     return (
         <div className="vegetable-card">
-          Vegetable card
+          <p>{veggie.name}</p>
         </div>
     );
 }

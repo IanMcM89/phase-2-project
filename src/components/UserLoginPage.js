@@ -13,20 +13,20 @@ function UserLoginPage({ history, onUserLogin }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    setFormData({
-      username: '',
-      password: ''
-    });
-
     fetch("http://localhost:3000/users")
     .then(r => r.json())
     .then(userData => userData.filter(user => {
       if (user.username.includes(formData.username) && user.password.includes(formData.password)) {
-        return onUserLogin() & history.push("/");
+        return onUserLogin(formData.username) & history.push("/");
       } else {
         return setLoginError('Login failed! Incorrect username or password.');
       }
     }))
+
+    setFormData({
+      username: '',
+      password: ''
+    });
   }
 
   return (

@@ -3,42 +3,38 @@
     {
       "id": 1,
       "name": "Onion",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89", "VeggieMaster34"]
     },
     {
       "id": 2,
       "name": "Garlic",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89"]
     },
     {
       "id": 3,
       "name": "Celery",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89", "VeggieMaster34"]
     },
     {
       "id": 4,
       "name": "Carrot",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89", "VeggieMaster34"]
     },
     {
       "id": 5,
       "name": "Potato",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89"]
     },
     {
       "id": 6,
       "name": "Tomato",
-      "image": "./images/image-placeholder-icon.png"
-    },
-    {
-      "id": 7,
-      "name": "Lettuce",
-      "image": "./images/image-placeholder-icon.png"
-    },
-    {
-      "id": 8,
-      "name": "Turnip",
-      "image": "./images/image-placeholder-icon.png"
+      "image": "./images/image-placeholder-icon.png",
+      "users": ["ianmcm89", "VeggieMaster34"]
     }
   ],
   "users": [
@@ -46,6 +42,11 @@
       "id": 1,
       "username": "ianmcm89",
       "password": "password"
+    },
+    {
+      "id": 2,
+      "username": "VeggieMaster34",
+      "password": "Veggie34"
     }
   ]
 }
