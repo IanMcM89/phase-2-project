@@ -102,6 +102,17 @@ body {
   display: flex;
   justify-content: center;
   font-family: inherit;
+  font-weight: bold;
+  width: 98%;
+  height: 5%;
+  margin: 1%;
+}
+
+.login-new-user-message {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  font-family: inherit;
   width: 98%;
   height: 5%;
   margin: 1%;
@@ -110,9 +121,8 @@ body {
 #login-inputs-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 40%;
-  height: 30%;
+  height: fit-content;
   margin: 30%;
   margin-top: 2%;
   margin-bottom: 2%;

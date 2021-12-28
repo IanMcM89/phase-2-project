@@ -33,7 +33,8 @@ function UserLoginPage({ history, onUserLogin }) {
     <main id="App-login-main">
       <form id="App-login-form" onSubmit={handleSubmit}>
         <h1>User Login</h1>
-        <p className="login-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
+        <p className="login-message">Welcome to My Little Black Book: Vegetable Edition!</p>
+        <p className="login-new-user-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
         <div id="login-inputs-container">
           <div className="login-input">
             <input 

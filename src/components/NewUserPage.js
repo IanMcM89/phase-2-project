@@ -20,22 +20,25 @@ function NewUserPage({ onUserLogin, history }) {
       password: formData.password
     }
 
-    if (formData.verifiedPassword.includes(formData.password)) {
-      fetch("http://localhost:3000/users")
+    fetch("http://localhost:3000/users")
       .then(r => r.json())
       .then(userData => userData.find(user => {
-        if (user.username.includes(newUser.username)) return setSignUpError('Registration failed. User already exists.');
-        
-        else {
-          setFormData({
-            username: '',
-            password: '',
-            verifiedPassword: ''
-          });
-
+        if (newUser.username === '' || newUser.password === '') {
+          return setSignUpError('Please enter a valid username and password.');
+        } else if (!formData.verifiedPassword.includes(formData.password)) {
+          return setSignUpError('Registration failed. Passwords must match.');
+        } else if (user.username.startsWith(newUser.username)) {
+          return setSignUpError('Registration failed. User already exists.');
+        } else {
           return onUserLogin() & history.push("/");
         }
-      }))
+        }))
+
+        setFormData({
+          username: '',
+          password: '',
+          verifiedPassword: ''
+        });
 
       // fetch("http://localhost:3000/users", {
       // method: "POST",
@@ -47,9 +50,6 @@ function NewUserPage({ onUserLogin, history }) {
       // .then(r => r.json())
       // .then(newUserData => console.log(newUserData))
       // .then(onUserLogin() & history.push("/"))
-    } else {
-      return setSignUpError('Registration failed. Passwords must match.');
-    }
   }
 
   return (
@@ -87,7 +87,7 @@ function NewUserPage({ onUserLogin, history }) {
           </div>
         </div>
         <p className="login-error">{signUpError}</p>
-        <input id="login-submit" type="submit" value="Submit" />
+        <input id="login-submit" type="submit" value="Register" />
       </form>
     </main>
   )
