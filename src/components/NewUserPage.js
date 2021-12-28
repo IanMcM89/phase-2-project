@@ -22,34 +22,34 @@ function NewUserPage({ onUserLogin, history }) {
 
     fetch("http://localhost:3000/users")
       .then(r => r.json())
-      .then(userData => userData.find(user => {
+      .then(userData => {
         if (newUser.username === '' || newUser.password === '') {
           return setSignUpError('Please enter a valid username and password.');
-        } else if (!formData.verifiedPassword.includes(formData.password)) {
+        } else if (formData.verifiedPassword !== formData.password) {
           return setSignUpError('Registration failed. Passwords must match.');
-        } else if (user.username.startsWith(newUser.username)) {
+        } else if (userData.find(user => user.username === newUser.username)) {
           return setSignUpError('Registration failed. User already exists.');
         } else {
-          return onUserLogin() & history.push("/");
+          // fetch("http://localhost:3000/users", {
+          // method: "POST",
+          // headers: {
+          //   "Content-Type": "application/json",
+          // },
+          // body: JSON.stringify(newUser), 
+          // })
+          // .then(r => r.json())
+          // .then(newUser => console.log(newUser))
+          // .then(onUserLogin(newUser.username) & history.push("/"))
+
+          return onUserLogin(newUser.username) & history.push("/");
         }
-        }))
+      })
 
-        setFormData({
-          username: '',
-          password: '',
-          verifiedPassword: ''
-        });
-
-      // fetch("http://localhost:3000/users", {
-      // method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      // body: JSON.stringify(newUser), 
-      // })
-      // .then(r => r.json())
-      // .then(newUserData => console.log(newUserData))
-      // .then(onUserLogin() & history.push("/"))
+    setFormData({
+      username: '',
+      password: '',
+      verifiedPassword: ''
+    });
   }
 
   return (
