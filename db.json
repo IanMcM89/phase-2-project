@@ -4,31 +4,37 @@
       "id": 1,
       "name": "Onion",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "ianmcm89"
     },
     {
       "id": 2,
       "name": "Garlic",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "ianmcm89"
     },
     {
       "id": 3,
       "name": "Celery",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "VeggieMaster34"
     },
     {
       "id": 4,
       "name": "Carrot",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "VeggieMaster34"
     },
     {
       "id": 5,
       "name": "Potato",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "ianmcm89"
     },
     {
       "id": 6,
       "name": "Tomato",
       "image": "./images/image-placeholder-icon.png",
+      "poster": "VeggieMaster34"
     }
   ],
   "users": [
