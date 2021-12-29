@@ -9,7 +9,6 @@ import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [vegetables, setVegetables] = useState([]);
-  const [userVegetables, setUserVegetables] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -20,7 +19,6 @@ function App() {
 
   function onUserLogin(user) {
     setIsSignedIn(!isSignedIn);
-    setUserVegetables(vegetables.filter(veggie => veggie.users.includes(user)))
 
     return user;
   }
@@ -39,7 +37,7 @@ function App() {
             <UserLoginPage onUserLogin={onUserLogin} history={history}/>
           </Route>
           <Route exact path="/">
-            <VegetablePage isSignedIn={isSignedIn} userVegetables={userVegetables}/>
+            <VegetablePage isSignedIn={isSignedIn} vegetables={vegetables}/>
           </Route>
         </Switch>
       </BrowserRouter>
