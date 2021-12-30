@@ -33,7 +33,6 @@ body {
 }
 
 .header-title img {
-  background: black;
   width: 19%;
   height: auto;
   margin: 3%;
@@ -46,8 +45,8 @@ body {
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 60px;
-  width: 50%;
-  margin: 0;
+  width: fit-content;
+  margin: 3%;
 }
 
 #header-dashboard {
