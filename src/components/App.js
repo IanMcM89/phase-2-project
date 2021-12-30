@@ -12,7 +12,7 @@ function App() {
   console.log(isLoggedIn)
 
   useEffect(() => {
-    fetch("http://localhost:3000/vegetables")
+    fetch("http://localhost:3000/plants")
     .then(r => r.json())
     .then(plantData => setPlants(plantData))
   }, []);
