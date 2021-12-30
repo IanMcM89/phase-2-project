@@ -7,13 +7,13 @@ body {
   margin: 0;
 }
 
-.App {
+.app {
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
-#App-header {
+#app-header {
   background-color: black;
   outline: greenyellow 10px solid;
   color: forestgreen;
@@ -50,23 +50,21 @@ body {
   margin: 0;
 }
 
-#App-main {
+.app-main {
   display: flex;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 75vh;
   margin: 0;
 }
 
-#App-login-main {
+#app-login-div {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 75vh;
 }
 
-#App-login-form {
+#app-login-form {
   background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -78,7 +76,7 @@ body {
   margin-bottom: 3%;
 }
 
-#App-login-form h1 {
+#app-login-form h1 {
   background: black;
   color: white;
   display: flex;
@@ -235,7 +233,7 @@ body {
   padding: 4px;
 }
 
-#App-footer {
+#app-footer {
   display: flex;
   background-color: black;
   color: white;

@@ -1,23 +1,25 @@
 import React, {useState } from "react";
 import { withRouter } from 'react-router-dom';
 
-function UserLoginPage({ history, onUserLogin }) {
+function LoginPage({ history, onLogin }) {
+  const [loginError, setLoginError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
-  const [loginError, setLoginError] = useState('');
 
-  const handleChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+  function handleChange(e) {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  }
 
-  const handleSubmit = e => {
+  function handleSubmit(e) {
     e.preventDefault();
 
     fetch("http://localhost:3000/users")
     .then(r => r.json())
     .then(userData => userData.filter(user => {
       if (user.username === formData.username && user.password === formData.password) {
-        return onUserLogin(formData.username) & history.push("/");
+        return onLogin(formData.username) & history.push("/");
       } else {
         return setLoginError('Incorrect username or password.');
       }
@@ -30,8 +32,8 @@ function UserLoginPage({ history, onUserLogin }) {
   }
 
   return (
-    <main id="App-login-main">
-      <form id="App-login-form" onSubmit={handleSubmit}>
+    <div id="app-login-div">
+      <form id="app-login-form" onSubmit={handleSubmit}>
         <h1>USER LOGIN</h1>
         <p className="login-message">Welcome to My Gardener's Black Book</p>
         <p className="login-new-user-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
@@ -58,8 +60,8 @@ function UserLoginPage({ history, onUserLogin }) {
         <p className="login-error">{loginError}</p>
         <input id="login-submit" type="submit" value="Sign In"/>
       </form>
-    </main>
+    </div>
   );
 }
 
-export default withRouter(UserLoginPage);
+export default withRouter(LoginPage);

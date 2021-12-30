@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from "react";
 import Header from "./Header";
-import NewUserPage from "./NewUserPage";
-import UserLoginPage from "./UserLoginPage";
-import VegetablePage from "./VegetablePage";
+import Main from "./Main";
 import Footer from "./Footer";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [vegetables, setVegetables] = useState([]);
   const history = useHistory();
 
-  console.log(isSignedIn)
+  console.log(isLoggedIn)
 
   useEffect(() => {
     fetch("http://localhost:3000/vegetables")
@@ -19,28 +17,16 @@ function App() {
     .then(veggieData => setVegetables(veggieData))
   }, []);
 
-  function onUserLogin(user) {
-    setIsSignedIn(!isSignedIn);
+  function onLogin(user) {
+    setIsLoggedIn(!isLoggedIn);
 
     return user;
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/create-account">
-            <NewUserPage onUserLogin={onUserLogin} history={history}/>
-          </Route>
-          <Route path="/login">
-            <UserLoginPage onUserLogin={onUserLogin} history={history} />
-          </Route>
-          <Route exact path="/">
-            <VegetablePage isSignedIn={isSignedIn} vegetables={vegetables} setIsSignedIn={setIsSignedIn}/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <Main onLogin={onLogin} vegetables={vegetables} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Footer />
     </div>
   );

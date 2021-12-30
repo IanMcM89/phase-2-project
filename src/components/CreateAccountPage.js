@@ -1,17 +1,19 @@
 import React, {useState} from "react";
 import { withRouter } from 'react-router-dom';
 
-function NewUserPage({ onUserLogin, history }) {
+function CreateAccountPage({ onLogin, history }) {
+  const [signUpError, setSignUpError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     password: '',
     verifiedPassword: ''
   });
-  const [signUpError, setSignUpError] = useState('');
 
-  const handleChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+  function handleChange(e) {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  }
 
-  const handleSubmit = e => {
+  function handleSubmit(e) {
     e.preventDefault();
 
     const newUser = {
@@ -41,7 +43,7 @@ function NewUserPage({ onUserLogin, history }) {
           // .then(newUser => console.log(newUser))
           // .then(onUserLogin(newUser.username) & history.push("/"))
 
-          return onUserLogin(newUser.username) & history.push("/");
+          return onLogin(newUser.username) & history.push("/");
         }
       })
 
@@ -53,8 +55,8 @@ function NewUserPage({ onUserLogin, history }) {
   }
 
   return (
-    <main id="App-login-main">
-      <form id="App-login-form" onSubmit={handleSubmit}>
+    <div id="app-login-div">
+      <form id="app-login-form" onSubmit={handleSubmit}>
         <h1>Create New Account</h1>
         <p className="login-message">Enter a username and password:</p>
         <div id="login-inputs-container">
@@ -89,8 +91,8 @@ function NewUserPage({ onUserLogin, history }) {
         <p className="login-error">{signUpError}</p>
         <input id="login-submit" type="submit" value="Register" />
       </form>
-    </main>
+    </div>
   )
 }
 
-export default withRouter(NewUserPage);
+export default withRouter(CreateAccountPage);
