@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from 'react-router-dom';
 
-function CreateAccountPage({ onLogin, history }) {
+function CreateAccountPage({ onLogin, history, users, setUsers }) {
   const [signUpError, setSignUpError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
@@ -9,8 +9,37 @@ function CreateAccountPage({ onLogin, history }) {
     verifiedPassword: ''
   });
 
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+    .then(r => r.json())
+    .then(userData => setUsers(userData))
+  }, [setUsers]);
+
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value});
+  }
+
+  function validateUser(newUser) {
+    if (newUser.username === '' || newUser.password === '') {
+      return setSignUpError('Please enter a valid username and password.');
+    } else if (formData.verifiedPassword !== formData.password) {
+      return setSignUpError('Passwords must match.');
+    } else if (users.filter(user => user.username === newUser.username)) {
+      return setSignUpError('User already exists.');
+    } else {
+      // fetch("http://localhost:3000/users", {
+      // method: "POST",
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify(newUser), 
+      // })
+      // .then(r => r.json())
+      // .then(newUser => console.log(newUser))
+      // .then(onUserLogin(newUser.username) & history.push("/"))
+
+      return onLogin(newUser.username) & history.push("/");
+    };
   }
 
   function handleSubmit(e) {
@@ -21,31 +50,8 @@ function CreateAccountPage({ onLogin, history }) {
       username: formData.username,
       password: formData.password
     }
-
-    fetch("http://localhost:3000/users")
-      .then(r => r.json())
-      .then(userData => {
-        if (newUser.username === '' || newUser.password === '') {
-          return setSignUpError('Please enter a valid username and password.');
-        } else if (formData.verifiedPassword !== formData.password) {
-          return setSignUpError('Registration failed. Passwords must match.');
-        } else if (userData.find(user => user.username === newUser.username)) {
-          return setSignUpError('Registration failed. User already exists.');
-        } else {
-          // fetch("http://localhost:3000/users", {
-          // method: "POST",
-          // headers: {
-          //   "Content-Type": "application/json",
-          // },
-          // body: JSON.stringify(newUser), 
-          // })
-          // .then(r => r.json())
-          // .then(newUser => console.log(newUser))
-          // .then(onUserLogin(newUser.username) & history.push("/"))
-
-          return onLogin(newUser.username) & history.push("/");
-        }
-      })
+    
+    validateUser(newUser);
 
     setFormData({
       username: '',

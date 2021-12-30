@@ -1,33 +1,39 @@
-import React, {useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from 'react-router-dom';
 
-function LoginPage({ history, onLogin }) {
+function LoginPage({ history, onLogin, users, setUsers }) {
   const [loginError, setLoginError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
 
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+    .then(r => r.json())
+    .then(userData => setUsers(userData))
+  }, [setUsers]);
+
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value});
+  }
+
+  function validateUser() {
+    if (users.find(user => user.username === formData.username && user.password === formData.password)) {
+      return onLogin(formData.username) & history.push("/");
+    } else {
+      return setLoginError('Incorrect username or password.');
+    }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3000/users")
-    .then(r => r.json())
-    .then(userData => userData.filter(user => {
-      if (user.username === formData.username && user.password === formData.password) {
-        return onLogin(formData.username) & history.push("/");
-      } else {
-        return setLoginError('Incorrect username or password.');
-      }
-    }))
+    validateUser();
 
     setFormData({
       username: '',
-      password: ''
+      password: '',
     });
   }
 
