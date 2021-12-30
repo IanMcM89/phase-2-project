@@ -9,7 +9,7 @@ function VegetableCard({ veggie }) {
             <button>⭐</button>
           </div>
           <div className="card-content">
-            <img></img>
+            <img alt={veggie.name}/>
             <div>
               <p>Sunlight: </p>
               <p>Water: </p>

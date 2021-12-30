@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState } from "react";
 import { withRouter } from 'react-router-dom';
 
 function UserLoginPage({ history, onUserLogin }) {
@@ -19,7 +19,7 @@ function UserLoginPage({ history, onUserLogin }) {
       if (user.username === formData.username && user.password === formData.password) {
         return onUserLogin(formData.username) & history.push("/");
       } else {
-        return setLoginError('Login failed! Incorrect username or password.');
+        return setLoginError('Incorrect username or password.');
       }
     }))
 
@@ -32,8 +32,8 @@ function UserLoginPage({ history, onUserLogin }) {
   return (
     <main id="App-login-main">
       <form id="App-login-form" onSubmit={handleSubmit}>
-        <h1>User Login</h1>
-        <p className="login-message">Welcome to My Gardener's Black Book!</p>
+        <h1>USER LOGIN</h1>
+        <p className="login-message">Welcome to My Gardener's Black Book</p>
         <p className="login-new-user-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
         <div id="login-inputs-container">
           <div className="login-input">

@@ -11,6 +11,8 @@ function App() {
   const [vegetables, setVegetables] = useState([]);
   const history = useHistory();
 
+  console.log(isSignedIn)
+
   useEffect(() => {
     fetch("http://localhost:3000/vegetables")
     .then(r => r.json())
@@ -23,8 +25,6 @@ function App() {
     return user;
   }
 
-  console.log(`isSignedIn = ${isSignedIn}`)
-
   return (
     <div className="App">
       <Header />
@@ -34,10 +34,10 @@ function App() {
             <NewUserPage onUserLogin={onUserLogin} history={history}/>
           </Route>
           <Route path="/login">
-            <UserLoginPage onUserLogin={onUserLogin} history={history}/>
+            <UserLoginPage onUserLogin={onUserLogin} history={history} />
           </Route>
           <Route exact path="/">
-            <VegetablePage isSignedIn={isSignedIn} vegetables={vegetables}/>
+            <VegetablePage isSignedIn={isSignedIn} vegetables={vegetables} setIsSignedIn={setIsSignedIn}/>
           </Route>
         </Switch>
       </BrowserRouter>
