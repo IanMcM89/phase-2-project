@@ -1,10 +1,10 @@
 import React from "react";
 import CreateAccountPage from "./CreateAccountPage";
 import LoginPage from "./LoginPage";
-import VegetablePage from "./VegetablePage";
+import PlantsPage from "./PlantsPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function Main({ onLogin, history, vegetables, isLoggedIn, setIsLoggedIn}) {
+function Main({ onLogin, history, plants, isLoggedIn, setIsLoggedIn}) {
   return (
     <main className="app-main">
       <BrowserRouter>
@@ -16,7 +16,7 @@ function Main({ onLogin, history, vegetables, isLoggedIn, setIsLoggedIn}) {
             <LoginPage onLogin={onLogin} history={history} />
           </Route>
           <Route exact path="/">
-            <VegetablePage vegetables={vegetables} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+            <PlantsPage plants={plants} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
           </Route>
         </Switch>
       </BrowserRouter>

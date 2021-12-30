@@ -149,7 +149,7 @@ body {
   margin: auto;
 }
 
-.vegetable-card-table {
+.plant-card-table {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -159,7 +159,7 @@ body {
   margin: 1%;
 }
 
-.vegetable-card {
+.plant-card {
   background-color: rgb(231, 231, 231);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: inline-flex;

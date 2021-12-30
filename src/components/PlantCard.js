@@ -1,15 +1,15 @@
 import React from "react";
 
-function VegetableCard({ veggie }) {
+function PlantCard({ plant }) {
     return (
-        <div className="vegetable-card">
+        <div className="plant-card">
           <div className="card-title">
-            <h3>{veggie.name}</h3>
-            <p>Posted By: {veggie.poster}</p>
+            <h3>{plant.name}</h3>
+            <p>Posted By: {plant.poster}</p>
             <button>⭐</button>
           </div>
           <div className="card-content">
-            <img alt={veggie.name}/>
+            <img alt={plant.name}/>
             <div>
               <p>Sunlight: </p>
               <p>Water: </p>
@@ -21,4 +21,4 @@ function VegetableCard({ veggie }) {
     );
 }
 
-export default VegetableCard;
+export default PlantCard;

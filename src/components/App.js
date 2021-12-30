@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [vegetables, setVegetables] = useState([]);
+  const [plants, setPlants] = useState([]);
   const history = useHistory();
 
   console.log(isLoggedIn)
@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/vegetables")
     .then(r => r.json())
-    .then(veggieData => setVegetables(veggieData))
+    .then(plantData => setPlants(plantData))
   }, []);
 
   function onLogin(user) {
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Main onLogin={onLogin} vegetables={vegetables} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Main onLogin={onLogin} plants={plants} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Footer />
     </div>
   );
