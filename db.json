@@ -4,49 +4,199 @@
       "id": 1,
       "name": "Onion",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "ianmcm89"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "SeedlingSarah2021",
+      "favorites": []
     },
     {
       "id": 2,
       "name": "Garlic",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "ianmcm89"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "gardengurl88",
+      "favorites": []
     },
     {
       "id": 3,
       "name": "Celery",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "VeggieMaster34"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "VeggieMaster34",
+      "favorites": []
     },
     {
       "id": 4,
       "name": "Carrot",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "VeggieMaster34"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "VeggieMaster34",
+      "favorites": []
+
     },
     {
       "id": 5,
       "name": "Potato",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "ianmcm89"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "gardengurl88",
+      "favorites": []
     },
     {
       "id": 6,
       "name": "Tomato",
       "image": "./images/image-placeholder-icon.png",
-      "poster": "VeggieMaster34"
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "PlanterDan77",
+      "favorites": []
+    },
+    {
+      "id": 7,
+      "name": "Thyme",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "PlanterDan77",
+      "favorites": []
+    },
+    {
+      "id": 8,
+      "name": "Cilantro",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "PlanterDan77",
+      "favorites": []
+    },
+    {
+      "id": 9,
+      "name": "Rosemary",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "PlanterDan77",
+      "favorites": []
+    },
+    {
+      "id": 10,
+      "name": "Basil",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "PlanterDan77",
+      "favorites": []
+    },
+    {
+      "id": 11,
+      "name": "Lettuce",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "VeggieMaster34",
+      "favorites": []
+    },
+    {
+      "id": 12,
+      "name": "Bell Pepper",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "VeggieMaster34",
+      "favorites": []
+    },
+    {
+      "id": 13,
+      "name": "Air Plant",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "SeedlingSarah2021",
+      "favorites": []
+    },
+    {
+      "id": 14,
+      "name": "Orange",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "FloridaMan2020",
+      "favorites": []
+    },
+    {
+      "id": 15,
+      "name": "Lemon",
+      "image": "./images/image-placeholder-icon.png",
+      "sunlight": "",
+      "water": "",
+      "season": "",
+      "description": "",
+      "poster": "FloridaMan2020",
+      "favorites": []
     }
   ],
   "users": [
     {
       "id": 1,
-      "username": "ianmcm89",
-      "password": "password"
+      "username": "SeedlingSarah2021",
+      "password": "dancer98"
     },
     {
       "id": 2,
       "username": "VeggieMaster34",
       "password": "Veggie34"
+    },
+    {
+      "id": 3,
+      "username": "planterDan77",
+      "password": "password77"
+    },
+    {
+      "id": 4,
+      "username": "FloridaMan2020",
+      "password": "fman2020"
+    },
+    {
+      "id": 5,
+      "username": "gardengurl88",
+      "password": "password88"
+    },
+    {
+      "id": 6,
+      "username": "ianmcm89",
+      "password": "password"
     }
   ]
 }

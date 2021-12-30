@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [plants, setPlants] = useState([]);
+  const [user, setUser] = useState('')
   const history = useHistory();
 
   useEffect(() => {
@@ -18,13 +19,13 @@ function App() {
   function onLogin(user) {
     setIsLoggedIn(!isLoggedIn);
 
-    return user;
+    return setUser(user);
   }
 
   return (
     <div className="app">
-      <Header />
-      <Main onLogin={onLogin} plants={plants} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Header isLoggedIn={isLoggedIn} user={user}/>
+      <Main onLogin={onLogin} plants={plants} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Footer />
     </div>
   );
