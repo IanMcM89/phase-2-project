@@ -204,12 +204,28 @@ body {
 .plant-card-table {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
   width: 98%;
   height: 95%;
   margin: 1%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f138;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 44, 44, 0.432);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.397);
 }
 
 .plant-card {

@@ -1,12 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
 function PlantCard({ plant }) {
-  const [isFavorited, setIsFavorited] = useState(false);
-
-  function onFavoriteClick(e) {
-    setIsFavorited(!isFavorited)
-  }
-
   return (
       <div className="plant-card">
         <div className="plant-card-title">
