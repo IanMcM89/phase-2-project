@@ -1,7 +1,7 @@
 import React from "react";
 import UserDashBoard from "./UserDashboard";
 
-function Header({ isLoggedIn, currentUser, onLogout, onDatabaseClick }) {
+function Header({ isLoggedIn, currentUser, onLogout }) {
   return (
     <header id="app-header">
       <div className="header-title">
@@ -11,7 +11,6 @@ function Header({ isLoggedIn, currentUser, onLogout, onDatabaseClick }) {
       {isLoggedIn ? <UserDashBoard 
         currentUser={currentUser} 
         onLogout={onLogout} 
-        onDatabaseClick={onDatabaseClick} 
       /> : null}
     </header>
   );
