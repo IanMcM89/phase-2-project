@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Onion",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/onion.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Garlic",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/garlic.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "Celery",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/celery.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "name": "Carrot",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/carrot.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "name": "Potato",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/potato.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -53,7 +53,7 @@
     {
       "id": 6,
       "name": "Tomato",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/tomato.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "name": "Thyme",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/thyme.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -73,7 +73,7 @@
     {
       "id": 8,
       "name": "Cilantro",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/cilantro.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -83,7 +83,7 @@
     {
       "id": 9,
       "name": "Rosemary",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/rosemary.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -93,7 +93,7 @@
     {
       "id": 10,
       "name": "Basil",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/basil.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -103,7 +103,7 @@
     {
       "id": 11,
       "name": "Lettuce",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/lettuce.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -113,7 +113,7 @@
     {
       "id": 12,
       "name": "Bell Pepper",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/bell-pepper.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -123,7 +123,7 @@
     {
       "id": 13,
       "name": "Air Plant",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/air-plant.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -133,7 +133,7 @@
     {
       "id": 14,
       "name": "Orange",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/orange.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -143,7 +143,7 @@
     {
       "id": 15,
       "name": "Lemon",
-      "image": "./images/image-placeholder-icon.png",
+      "image": "./images/plants/lemon.jpg",
       "sunlight": "",
       "water": "",
       "season": "",
@@ -194,8 +194,8 @@
       "favorites": [
         1,
         2,
-        3,
-        4
+        4,
+        6
       ]
     }
   ]

@@ -257,8 +257,9 @@ body {
   width: 40%;
 }
 
-.plant-card-title p{
+.plant-card-title p {
   display: flex;
+  font-size: small;
   align-items: center;
   justify-content: center;
   width: 50%;
@@ -293,12 +294,21 @@ body {
   height: 85%;
 }
 
-.plant-card-content img {
-  background-color: rgb(196, 196, 196);
-  margin: 2%;
+.plant-card-image {
+  overflow: hidden;
   display: flex;
+  position: relative;
   width: 38%;
   height: auto;
+  margin: 2%;
+  background: center center / cover;
+}
+
+.plant-card-image img {
+  background-color: rgb(196, 196, 196);
+  position: absolute;
+  display: flex;
+  width: 300px;
 }
 
 .plant-card-content div {

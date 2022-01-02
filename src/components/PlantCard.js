@@ -31,7 +31,9 @@ function PlantCard({ plant, currentUser, userFavorites, setUserFavorites }) {
         <button className={isFavorited ? 'favorite-button-active' : 'favorite-button'} onClick={handleFavoriteClick}>⭐</button>
       </div>
       <div className="plant-card-content">
-        <img alt={plant.name}/>
+        <div className="plant-card-image">
+          <img src={plant.image} alt={plant.name}/>
+        </div>
         <div>
           <p>Sunlight: {plant.sunlight}</p>
           <p>Water: {plant.water}</p>
