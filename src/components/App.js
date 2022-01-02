@@ -44,22 +44,14 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header
-          isLoggedIn={isLoggedIn}  
-          onLogout={handleLogout} 
-          currentUser={currentUser}
-        />
+        <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} currentUser={currentUser} />
         <div className="app-main">
           <Switch>
               <Route exact path="/login">
-                <LoginPage 
-                  onLogin={handleLogin} 
-                />
+                <LoginPage onLogin={handleLogin} />
               </Route>
               <Route exact path="/create-account">
-                <CreateAccountPage 
-                  onLogin={handleLogin} 
-                />
+                <CreateAccountPage onLogin={handleLogin} />
               </Route>
               <Route exact path="/favorites">
                 <FavoritesPage 

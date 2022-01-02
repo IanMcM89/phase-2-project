@@ -8,10 +8,7 @@ function Header({ isLoggedIn, currentUser, onLogout }) {
         <img src="./images/mgbb-logo.png" alt="MGBB Logo"/>
         <h1>MGBB</h1>
       </div>
-      {isLoggedIn ? <UserDashBoard 
-        currentUser={currentUser} 
-        onLogout={onLogout} 
-      /> : null}
+      {isLoggedIn ? <UserDashBoard currentUser={currentUser} onLogout={onLogout} /> : null}
     </header>
   );
 }
