@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useHistory } from 'react-router-dom';
 
-function UserDashBoard({currentUser, onLogout, onDatabaseClick }) {
+function UserDashBoard({currentUser, onLogout }) {
     const [isActive, setIsActive] = useState([true]);
     const history = useHistory();
     const activeStatus = [];
@@ -10,11 +10,11 @@ function UserDashBoard({currentUser, onLogout, onDatabaseClick }) {
         setIsActive({...activeStatus, [e.target.id]: true});
 
         if (e.target.textContent === 'DATABASE') {
-            return onDatabaseClick() & history.push("/");
+            return history.push("/");
         } else if (e.target.textContent === 'FAVORITES') {
             return history.push("/favorites");
         } else if (e.target.textContent === 'POST') {
-            return onDatabaseClick() & history.push("/");
+            return history.push("/");
         } else {
             return onLogout();
         }         

@@ -41,17 +41,12 @@ function App() {
     setIsLoggedIn(false);
   }
 
-  function handleResetPlants() {
-    // setFilteredPlants(plants);
-  }
-
   return (
     <div className="app">
       <BrowserRouter>
         <Header
           isLoggedIn={isLoggedIn}  
           onLogout={handleLogout} 
-          onDatabaseClick={handleResetPlants}
           currentUser={currentUser}
         />
         <div className="app-main">
