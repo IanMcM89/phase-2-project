@@ -206,6 +206,7 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  align-content: flex-start;
   overflow-y: auto;
   width: 98%;
   height: 95%;
@@ -263,11 +264,22 @@ body {
   width: 50%;
 }
 
-.plant-card-favorite-button {
+.favorite-button {
   background: black;
   border: none;
   background-color: transparent;
   filter: grayscale(1);
+  display: flex;
+  font-size: larger;
+  justify-content: center;
+  width: 10%;
+}
+
+.favorite-button-active {
+  filter: grayscale(0);
+  background: black;
+  border: none;
+  background-color: transparent;
   display: flex;
   font-size: larger;
   justify-content: center;

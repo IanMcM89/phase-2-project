@@ -1,23 +1,20 @@
 import React, {useState} from "react";
+import { useHistory } from 'react-router-dom';
 
-function UserDashBoard({ user, onLogout, onDatabaseClick, onFavoritesClick }) {
+function UserDashBoard({currentUser, onLogout, onDatabaseClick }) {
     const [isActive, setIsActive] = useState([true]);
-    const activeStatus = {
-        1 : false,
-        2 : false,
-        3 : false,
-        4 : false,
-    };
+    const history = useHistory();
+    const activeStatus = [];
 
     function handleClick(e) {
         setIsActive({...activeStatus, [e.target.id]: true});
 
         if (e.target.textContent === 'DATABASE') {
-            return onDatabaseClick();
+            return onDatabaseClick() & history.push("/");
         } else if (e.target.textContent === 'FAVORITES') {
-            return onFavoritesClick();
+            return history.push("/favorites");
         } else if (e.target.textContent === 'POST') {
-            console.log('Post');
+            return onDatabaseClick() & history.push("/");
         } else {
             return onLogout();
         }         
@@ -25,7 +22,7 @@ function UserDashBoard({ user, onLogout, onDatabaseClick, onFavoritesClick }) {
 
     return (
         <div id="header-dashboard">
-            <h2>Welcome {user}!</h2>
+            <h2>Welcome {currentUser.username}!</h2>
             <button id={0} onClick={handleClick} className={ isActive[0] ? 'active' : null }>DATABASE</button>
             <button id={1} onClick={handleClick} className={ isActive[1] ? 'active' : null }>FAVORITES</button>
             <button id={2} onClick={handleClick} className={ isActive[2] ? 'active' : null }>POST</button>

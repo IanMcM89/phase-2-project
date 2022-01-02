@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import Main from "./Main";
+import LoginPage from "./LoginPage";
+import CreateAccountPage from "./CreateAccountPage";
+import PlantsPage from "./PlantsPage";
+import FavoritesPage from "./FavoritesPage";
 import Footer from "./Footer";
-import { useHistory, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [plants, setPlants] = useState([]);
-  const [filteredPlants, setFilteredPlants] = useState([])
-  const [user, setUser] = useState('')
-  const history = useHistory();
+  const [filteredPlants, setFilteredPlants] = useState([]);
+  const [currentUser, setCurrentUser] = useState('');
+  const [userFavorites, setUserFavorites] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/plants")
@@ -18,31 +21,74 @@ function App() {
       setPlants(plantData);
       setFilteredPlants(plantData);
     })
-  }, []);
+  }, [setIsLoggedIn]);
 
-  function onLogin(user) {
+  useEffect(() => {
+    if (currentUser.id !== undefined) return (
+      fetch(`http://localhost:3000/users/${currentUser.id}`)
+      .then(r => r.json())
+      .then(userData => setUserFavorites(userData.favorites))
+    );
+  }, [currentUser.id, setUserFavorites, setIsLoggedIn]);
+
+  function handleLogin(user) {
     setIsLoggedIn(!isLoggedIn);
-    return setUser(user);
+    setUserFavorites(user.favorites);
+    return setCurrentUser(user);
   }
 
-  function onLogout() {
-    setIsLoggedIn(false)
-    return <Redirect to="/login" />
+  function handleLogout() {
+    setIsLoggedIn(false);
   }
 
-  function onDatabaseClick() {
-    setFilteredPlants(plants);
-  }
-
-  function onFavoritesClick() {
-    setFilteredPlants(plants.filter(plant => plant.favorites.find(username => username === user)));
+  function handleResetPlants() {
+    // setFilteredPlants(plants);
   }
 
   return (
     <div className="app">
-      <Header isLoggedIn={isLoggedIn} user={user} onLogout={onLogout} onDatabaseClick={onDatabaseClick} onFavoritesClick={onFavoritesClick}/>
-      <Main onLogin={onLogin} plants={filteredPlants} history={history} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-      <Footer />
+      <BrowserRouter>
+        <Header
+          isLoggedIn={isLoggedIn}  
+          onLogout={handleLogout} 
+          onDatabaseClick={handleResetPlants}
+          currentUser={currentUser}
+        />
+        <div className="app-main">
+          <Switch>
+              <Route exact path="/login">
+                <LoginPage 
+                  onLogin={handleLogin} 
+                />
+              </Route>
+              <Route exact path="/create-account">
+                <CreateAccountPage 
+                  onLogin={handleLogin} 
+                />
+              </Route>
+              <Route exact path="/favorites">
+                <FavoritesPage 
+                  plants={filteredPlants}
+                  isLoggedIn={isLoggedIn} 
+                  currentUser={currentUser}
+                  userFavorites={userFavorites}
+                  setUserFavorites={setUserFavorites}
+                />
+              </Route>
+              <Route exact path="/">
+                <PlantsPage 
+                  plants={filteredPlants} 
+                  isLoggedIn={isLoggedIn} 
+                  setIsLoggedIn={setIsLoggedIn}
+                  currentUser={currentUser}
+                  userFavorites={userFavorites}
+                  setUserFavorites={setUserFavorites}
+                />
+              </Route>
+            </Switch>
+          </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
