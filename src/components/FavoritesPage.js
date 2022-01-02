@@ -18,9 +18,11 @@ function FavoritesPage({ plants, isLoggedIn, currentUser, userFavorites, setUser
     );
 
     return (
-        <div className="plant-card-table">
-            {plantsToBeDisplayed}
-        </div>
+        <main id="app-main">
+            <div className="plant-card-table">
+                {plantsToBeDisplayed}
+            </div>
+        </main>
     );
 }
 

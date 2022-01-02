@@ -34,7 +34,7 @@ function App() {
   function handleLogin(user) {
     setIsLoggedIn(!isLoggedIn);
     setUserFavorites(user.favorites);
-    return setCurrentUser(user);
+    setCurrentUser(user);
   }
 
   function handleLogout() {
@@ -45,35 +45,33 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} currentUser={currentUser} />
-        <div className="app-main">
           <Switch>
-              <Route exact path="/login">
-                <LoginPage onLogin={handleLogin} />
-              </Route>
-              <Route exact path="/create-account">
-                <CreateAccountPage onLogin={handleLogin} />
-              </Route>
-              <Route exact path="/favorites">
-                <FavoritesPage 
-                  plants={filteredPlants}
-                  isLoggedIn={isLoggedIn} 
-                  currentUser={currentUser}
-                  userFavorites={userFavorites}
-                  setUserFavorites={setUserFavorites}
-                />
-              </Route>
-              <Route exact path="/">
-                <PlantsPage 
-                  plants={filteredPlants} 
-                  isLoggedIn={isLoggedIn} 
-                  setIsLoggedIn={setIsLoggedIn}
-                  currentUser={currentUser}
-                  userFavorites={userFavorites}
-                  setUserFavorites={setUserFavorites}
-                />
-              </Route>
-            </Switch>
-          </div>
+            <Route exact path="/login">
+              <LoginPage onLogin={handleLogin} />
+            </Route>
+            <Route exact path="/create-account">
+              <CreateAccountPage onLogin={handleLogin} />
+            </Route>
+            <Route exact path="/favorites">
+              <FavoritesPage 
+                plants={filteredPlants}
+                isLoggedIn={isLoggedIn} 
+                currentUser={currentUser}
+                userFavorites={userFavorites}
+                setUserFavorites={setUserFavorites}
+              />
+            </Route>
+            <Route exact path="/">
+              <PlantsPage 
+                plants={filteredPlants} 
+                isLoggedIn={isLoggedIn} 
+                setIsLoggedIn={setIsLoggedIn}
+                currentUser={currentUser}
+                userFavorites={userFavorites}
+                setUserFavorites={setUserFavorites}
+              />
+            </Route>
+          </Switch>
         <Footer />
       </BrowserRouter>
     </div>

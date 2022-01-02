@@ -102,7 +102,7 @@ body {
   border-bottom: forestgreen solid 3px;
 }
 
-.app-main {
+#app-main {
   display: flex;
   width: 100vw;
   height: 75vh;

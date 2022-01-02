@@ -64,43 +64,45 @@ function CreateAccountPage({ onLogin }) {
   }
 
   return (
-    <div id="app-login-div">
-      <form id="app-login-form" onSubmit={handleSubmit}>
-        <h1>Create New Account</h1>
-        <p className="login-message">Enter a username and password:</p>
-        <div id="login-inputs-container">
-          <div className="login-input">
-            <input 
-              type="text" 
-              name="username" 
-              placeholder="Username"
-              value={formData.username}
-              onChange={handleChange}
-            />
+    <main id="app-main">
+      <div id="app-login-div">
+        <form id="app-login-form" onSubmit={handleSubmit}>
+          <h1>Create New Account</h1>
+          <p className="login-message">Enter a username and password:</p>
+          <div id="login-inputs-container">
+            <div className="login-input">
+              <input 
+                type="text" 
+                name="username" 
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="login-input">
+              <input 
+                type="password" 
+                name="password" 
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange} 
+              />
+            </div>
+            <div className="login-input">
+              <input 
+                type="password" 
+                name="verifiedPassword" 
+                placeholder="Verify Password"
+                value={formData.verifiedPassword}
+                onChange={handleChange} 
+              />
+            </div>
           </div>
-          <div className="login-input">
-            <input 
-              type="password" 
-              name="password" 
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange} 
-            />
-          </div>
-          <div className="login-input">
-            <input 
-              type="password" 
-              name="verifiedPassword" 
-              placeholder="Verify Password"
-              value={formData.verifiedPassword}
-              onChange={handleChange} 
-            />
-          </div>
-        </div>
-        <p className="login-error">{signUpError}</p>
-        <input id="login-submit" type="submit" value="Register" />
-      </form>
-    </div>
+          <p className="login-error">{signUpError}</p>
+          <input id="login-submit" type="submit" value="Register" />
+        </form>
+      </div>
+    </main>
   )
 }
 

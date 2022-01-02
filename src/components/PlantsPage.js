@@ -20,9 +20,11 @@ function PlantsPage({ plants, isLoggedIn, setIsLoggedIn, currentUser, userFavori
   );
 
   return (
-    <div className="plant-card-table">
-        {plantsToBeDisplayed}
-    </div>
+    <main id="app-main">
+      <div className="plant-card-table">
+          {plantsToBeDisplayed}
+      </div>
+    </main>
   );
 }
 
