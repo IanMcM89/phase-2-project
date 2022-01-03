@@ -27,18 +27,18 @@ function PlantCard({ plant, currentUser, userFavorites, setUserFavorites }) {
     <div className="plant-card">
       <div className="plant-card-title">
         <h3>{plant.name}</h3>
-        <p>Posted By: {plant.poster}</p>
+        <p>Posted By: <span>{plant.poster}</span></p>
         <button className={isFavorited ? 'favorite-button-active' : 'favorite-button'} onClick={handleFavoriteClick}>⭐</button>
       </div>
       <div className="plant-card-content">
         <div className="plant-card-image">
           <img src={plant.image} alt={plant.name}/>
         </div>
-        <div>
-          <p>Sunlight: {plant.sunlight}</p>
-          <p>Water: {plant.water}</p>
-          <p>Season: {plant.season}</p>
-          <p>Description: {plant.description}</p>
+        <div className="plant-card-info">
+          <p>Sunlight Level: <span>{plant.sunlight}</span></p>
+          <p>Water Level: <span>{plant.water}</span></p>
+          <p>Best Planting Season: <span>{plant.season}</span></p>
+          <div>{plant.description}</div>
         </div>
       </div>
     </div>
