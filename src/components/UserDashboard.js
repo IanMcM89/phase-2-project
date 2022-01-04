@@ -14,7 +14,7 @@ function UserDashBoard({currentUser, onLogout }) {
         } else if (e.target.textContent === 'FAVORITES') {
             return history.push("/favorites");
         } else if (e.target.textContent === 'POST') {
-            return history.push("/");
+            return history.push("/post");
         } else {
             return onLogout();
         }         

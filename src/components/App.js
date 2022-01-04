@@ -4,6 +4,7 @@ import LoginPage from "./LoginPage";
 import CreateAccountPage from "./CreateAccountPage";
 import PlantsPage from "./PlantsPage";
 import FavoritesPage from "./FavoritesPage";
+import NewPlantForm from "./NewPlantForm";
 import Footer from "./Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -60,6 +61,9 @@ function App() {
                 userFavorites={userFavorites}
                 setUserFavorites={setUserFavorites}
               />
+            </Route>
+            <Route exact path="/post">
+              <NewPlantForm isLoggedIn={isLoggedIn}/>
             </Route>
             <Route exact path="/">
               <PlantsPage 
