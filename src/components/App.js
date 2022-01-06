@@ -14,6 +14,7 @@ function App() {
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [currentUser, setCurrentUser] = useState('');
   const [userFavorites, setUserFavorites] = useState([]);
+  const [isActive, setIsActive] = useState([true]);
 
   useEffect(() => {
     fetch("http://localhost:3000/plants")
@@ -42,10 +43,23 @@ function App() {
     setIsLoggedIn(false);
   }
 
+  //Adds new plant to plant data and resets Dashboard tab to 'Database':
+  function handleFormSubmit(newPlant) {
+    setFilteredPlants([...plants, newPlant]);
+    
+    return setIsActive({ 0: true });
+  }
+
   return (
     <div className="app">
       <BrowserRouter>
-        <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} currentUser={currentUser} />
+        <Header 
+          isLoggedIn={isLoggedIn} 
+          onLogout={handleLogout} 
+          currentUser={currentUser} 
+          isActive={isActive} 
+          setIsActive={setIsActive}
+        />
           <Switch>
             <Route exact path="/login">
               <LoginPage onLogin={handleLogin} />
@@ -63,7 +77,11 @@ function App() {
               />
             </Route>
             <Route exact path="/post">
-              <NewPlantForm isLoggedIn={isLoggedIn}/>
+              <NewPlantForm 
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+                onSubmit={handleFormSubmit}
+              />
             </Route>
             <Route exact path="/">
               <PlantsPage 

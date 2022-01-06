@@ -12,13 +12,13 @@
     },
     {
       "id": 2,
-      "name": "Tomato",
-      "image": "./images/plants/tomato.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
-      "water": "💧💧💧💧",
-      "season": "🌱🏝️",
-      "description": "Tomatoes grow well in well-drained soil and require full sun exposure. Tomatoes can grow well both in pots and in the ground. Harvest once red appears on the skin of the tomato.",
-      "poster": "PlanterDan77"
+      "name": "Lemon",
+      "image": "./images/plants/lemon.jpg",
+      "sunlight": "☀️☀️☀️",
+      "water": "💧💧💧",
+      "season": "🌱",
+      "description": "Citrus plants prefer warmer climates with full to partial sun and can grow in almost any soil with good drainage. They need daily watering when newly planted, but can sustain watering only once or twice a week once matured.",
+      "poster": "FloridaMan2020"
     },
     {
       "id": 3,
@@ -42,6 +42,16 @@
     },
     {
       "id": 5,
+      "name": "Thyme",
+      "image": "./images/plants/thyme.jpg",
+      "sunlight": "☀️☀️☀️☀️☀️",
+      "water": "💧💧",
+      "season": "🌱🏝️",
+      "description": "Thyme is an herb that grows best in full sun and well drained soil. Can be grown in pots but will flourish in gardens. Thyme can thrive in colder months and requires little watering.",
+      "poster": "PlanterDan77"
+    },
+    {
+      "id": 6,
       "name": "Lettuce",
       "image": "./images/plants/lettuce.jpg",
       "sunlight": "☀️☀️☀️",
@@ -51,7 +61,7 @@
       "poster": "VeggieMaster34"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Bell Pepper",
       "image": "./images/plants/bell-pepper.jpg",
       "sunlight": "☀️☀️☀️☀️",
@@ -59,16 +69,6 @@
       "season": "🌱🏝️",
       "description": "Bell peppers are warm weather crops that require lots of sun. If temperatures are high, they may need some shade during the day and need about about one to two inches of water per week.",
       "poster": "VeggieMaster34"
-    },
-    {
-      "id": 7,
-      "name": "Thyme",
-      "image": "./images/plants/thyme.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
-      "water": "💧💧",
-      "season": "🌱🏝️",
-      "description": "Thyme is an herb that grows best in full sun and well drained soil. Can be grown in pots but will flourish in gardens. Thyme can thrive in colder months and requires little watering.",
-      "poster": "PlanterDan77"
     },
     {
       "id": 8,
@@ -127,7 +127,7 @@
       "sunlight": "☀️☀️",
       "water": "💧",
       "season": "🌱🏝️🍂❄️",
-      "description": "Air plants are tropical plants that absorb moisture through their leaves and prefer warmer climates. They can be grown indoors if adequite humidity and indirect sunlight is provided. Air plants only need to be watered about once per week to thrive.",
+      "description": "Air plants are tropical plants that absorb moisture through their leaves. They can be grown indoors if adequite humidity and indirect sunlight is provided. Air plants only need to be watered about once per week.",
       "poster": "SeedlingSarah2021"
     },
     {
@@ -142,13 +142,13 @@
     },
     {
       "id": 15,
-      "name": "Lemon",
-      "image": "./images/plants/lemon.jpg",
-      "sunlight": "☀️☀️☀️",
-      "water": "💧💧💧",
-      "season": "🌱",
-      "description": "Citrus plants prefer warmer climates with full to partial sun and can grow in almost any soil with good drainage. They need daily watering when newly planted, but can sustain watering only once or twice a week once matured.",
-      "poster": "FloridaMan2020"
+      "name": "Tomato",
+      "image": "./images/plants/tomato.jpg",
+      "sunlight": "☀️☀️☀️☀️☀️",
+      "water": "💧💧💧💧",
+      "season": "🌱🏝️",
+      "description": "Tomatoes grow well in well-drained soil and require full sun exposure. Tomatoes can grow well both in pots and in the ground. Harvest once red appears on the skin of the tomato.",
+      "poster": "PlanterDan77"
     }
   ],
   "users": [
@@ -195,7 +195,8 @@
         1,
         2,
         4,
-        5
+        7,
+        6
       ]
     }
   ]

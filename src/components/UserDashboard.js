@@ -1,13 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
 
-function UserDashBoard({currentUser, onLogout }) {
-    const [isActive, setIsActive] = useState([true]);
+function UserDashBoard({currentUser, onLogout, isActive, setIsActive }) {
     const history = useHistory();
-    const activeStatus = [];
 
     function handleClick(e) {
-        setIsActive({...activeStatus, [e.target.id]: true});
+        setIsActive({[e.target.id]: true});
 
         if (e.target.textContent === 'DATABASE') {
             return history.push("/");

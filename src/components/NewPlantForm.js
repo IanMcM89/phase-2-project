@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
-function NewPlantForm({ isLoggedIn }) {
+function NewPlantForm({ isLoggedIn, currentUser, onSubmit }) {
+    const [activeSeasons, setActiveSeasons] = useState([]);
+    const [formError, setFormError] = useState('');
     const [formData, setFormData] = useState({
         name: '',
-        imageUrl: '',
+        image: '',
         sunlight: '',
         water: '',
         season: '',
-        description: ''
+        description: '',
+        poster: currentUser.username
     });
 
-    console.log(formData)
+    const history = useHistory();
 
     if (!isLoggedIn) return <Redirect to="/login" />;
 
@@ -20,8 +23,8 @@ function NewPlantForm({ isLoggedIn }) {
     }
 
     function handleIconChange(e) {
-        const iconArray = [...e.target.parentElement.children];
-    
+        let iconArray = [...e.target.parentElement.children];
+
         iconArray.forEach(icon => {
             let index = iconArray.indexOf(e.target);
     
@@ -37,95 +40,110 @@ function NewPlantForm({ isLoggedIn }) {
         return setFormData({...formData, [e.target.parentElement.getAttribute('name')]: iconLevel});
     }
 
+    function handleSeasonChange(e) {
+        let seasonsArray = activeSeasons;
+
+        if (activeSeasons.includes(e.target.textContent)) {
+            seasonsArray = [...activeSeasons.filter(icon => icon !== e.target.textContent)]
+            setActiveSeasons(seasonsArray);
+        } else {
+            seasonsArray = [ ...activeSeasons, e.target.textContent ]
+            setActiveSeasons(seasonsArray);
+        }
+
+        return setFormData({...formData, season: seasonsArray.join('')});
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formData)
+
+        if (Object.values(formData).includes('')) {
+            return setFormError('All input fields must be filled before posting');
+        } else {
+            fetch('http://localhost:3000/plants', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+            })
+            .then(r => r.json())
+            .then(newPlant => onSubmit(newPlant));
+
+            return history.push("/");
+        }
     }
 
     return (
         <main id="app-main">
             <form id="app-post-form" onSubmit={handleSubmit}>
-                <h1>POST PLANT</h1>
-                <p className="login-message">Post a new plant to the MGBB database:</p>
+                <h1>POST FORM</h1>
+                <p className="post-form-message">Post a new plant to the MGBB database by filling out the form below:</p>
                 <div id="post-inputs-container">
-                    <div className="post-input">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Plant Name"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
+                    <div id="text-input-div">
+                        <label htmlFor="name">Plant Name</label>
+                        <div className="post-input">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <label htmlFor="image">Plant Image</label>
+                        <div className="post-input">
+                            <input
+                                type="text"
+                                name="image"
+                                placeholder="Image URL"
+                                value={formData.image}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <label htmlFor="description">Description</label>
+                        <div className="post-input-description">
+                            <textarea
+                                id=""
+                                name="description"
+                                placeholder="Description"
+                                maxLength="230"
+                                value={formData.description}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
-                    <div className="post-input">
-                        <input
-                            type="text"
-                            name="imageUrl"
-                            placeholder="Image URL"
-                            value={formData.imageUrl}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className='icon-input' name="sunlight">
-                    <label for="sunlight">Select Sunlight Level:</label>
-                        <p className="icon" onClick={handleIconChange}>☀️</p>
-                        <p className="icon" onClick={handleIconChange}>☀️</p>
-                        <p className="icon" onClick={handleIconChange}>☀️</p>
-                        <p className="icon" onClick={handleIconChange}>☀️</p>
-                        <p className="icon" onClick={handleIconChange}>☀️</p>
-                    </div>
-                    <div className='icon-input' name="water">
-                    <label for="water">Select Water Level:</label>
-                        <p className="icon" onClick={handleIconChange}>💧</p>
-                        <p className="icon" onClick={handleIconChange}>💧</p>
-                        <p className="icon" onClick={handleIconChange}>💧</p>
-                        <p className="icon" onClick={handleIconChange}>💧</p>
-                        <p className="icon" onClick={handleIconChange}>💧</p>
-                    </div>
-                    <div className='icon-input' name="season">
-                        <label for="season">Select Season:</label>
-                        <label for="spring">🌱</label>
-                        <input type="radio" name="spring" value="🌱" onChange={(e) => console.log(e.target.value)}/>
-                        <label for="summer">🏝️</label>
-                        <input type="radio" name="summer" value="🏝️" onChange={(e) => console.log(e.target.value)}/>
-                        <label for="fall">🍂</label>
-                        <input type="radio" name="fall" value="🍂" onChange={(e) => console.log(e.target.value)}/>
-                        <label for="winter">❄️</label>
-                        <input type="radio" name="winter" value="❄️" onChange={(e) => console.log(e.target.value)}/>
-                    </div>
-                    <div className="post-input">
-                        <input
-                            type="text"
-                            name="description"
-                            placeholder="Description"
-                            value={formData.description}
-                            onChange={handleChange}
-                        />
+                    <div id="icon-input-div">
+                        <label htmlFor="sunlight">Sunlight Selector</label>
+                        <div className='icon-input' name="sunlight">
+                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                        </div>
+                        <label htmlFor="water">Water Selector</label>
+                        <div className='icon-input' name="water">
+                            <p className="icon" onClick={handleIconChange}>💧</p>
+                            <p className="icon" onClick={handleIconChange}>💧</p>
+                            <p className="icon" onClick={handleIconChange}>💧</p>
+                            <p className="icon" onClick={handleIconChange}>💧</p>
+                            <p className="icon" onClick={handleIconChange}>💧</p>
+                        </div>
+                        <label htmlFor="season">Season Selector</label>
+                        <div className='season-input' name="season">
+                            <p className={activeSeasons.find(icon => icon === '🌱') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🌱</p>
+                            <p className={activeSeasons.find(icon => icon === '🏝️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🏝️</p>
+                            <p className={activeSeasons.find(icon => icon === '🍂') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🍂</p>
+                            <p className={activeSeasons.find(icon => icon === '❄️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>❄️</p>
+                        </div>
+                        <p className="form-error">{formError}</p>
+                        <input id="post-submit" type="submit" value="POST"/>
                     </div>
                 </div>
-                <p className="login-error"></p>
-                <input id="post-submit" type="submit" value="Post Plant"/>
             </form>
         </main>
     );
 }
 
 export default NewPlantForm;
-
-// function handleSunInput(e) {
-//     const sunArray = [...e.target.parentElement.children];
-
-//     sunArray.forEach(sun => {
-//         let index = sunArray.indexOf(e.target);
-
-//         if (sun.className === 'sun') {
-//             sunArray.filter(sun => sunArray.indexOf(sun) <= index).forEach(sun => sun.className = 'sun-active');
-//         } else {
-//             sunArray.filter(sun => sunArray.indexOf(sun) > index).forEach(sun => sun.className = 'sun');
-//         }
-//     })
-
-//     const sunLevel = sunArray.filter(sun => sun.className === 'sun-active').map(sun => sun = sun.textContent).join('');
-
-//     setFormData({...formData, sunlight: sunLevel});
-// }
