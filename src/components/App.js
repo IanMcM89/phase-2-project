@@ -42,12 +42,13 @@ function App() {
     setCurrentUser(user);
   }
 
-  //Logs the current user out and redirects to the login page:
+  //Logs the current user out, resets Dashboard tabs to default and redirects to the login page:
   function handleLogout() {
     setIsLoggedIn(false);
+    setIsActive({ 0: true });
   }
 
-  //Adds new plant to server and resets Dashboard 'Database' tab active status to true:
+  //Adds new plant to server and resets Dashboard tabs to default:
   function handleFormSubmit(newPlant) {
     setFilteredPlants([...plants, newPlant]);
     setIsActive({ 0: true });
