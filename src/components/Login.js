@@ -4,68 +4,54 @@ import { withRouter, useHistory } from 'react-router-dom';
 function Login({ onLogin }) {
   const [loginError, setLoginError] = useState('');
   const [formData, setFormData] = useState({ username: '', password: '' });
-  
+
   const history = useHistory();
 
+  //Controls login form text inputs:
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value});
   }
 
+  //Fetches user data from server and sets current user to logged in if credentials exist and match and returns an error if not:
   function handleSubmit(e) {
     e.preventDefault();
-
-    validateUser();
-    resetFormData();
-  }
-
-  function validateUser() {
+    
     fetch("http://localhost:3000/users")
     .then(r => r.json())
     .then(userData => {
-      const currentUser = userData.find(user => user.username === formData.username && user.password === formData.password);
+      const currentUser = userData.find(user => Object.values(formData).includes(user.username && user.password));
 
-      return currentUser ? onLogin(currentUser) & history.push("/") : setLoginError('Incorrect username or password.');
+      return currentUser ? onLogin(currentUser) & history.push("/") : setLoginError('Login failed. Incorrect username or password.');
     })
-  }
-
-  function resetFormData() {
-    setFormData({
-      username: '',
-      password: '',
-    });
   }
 
   return (
     <main id="app-main">
-      <div id="app-login-div">
-        <form id="app-login-form" onSubmit={handleSubmit}>
+      <section id="login-container">
+        <form id="login-form" onSubmit={handleSubmit}>
           <h1>USER LOGIN</h1>
-          <p className="login-message">Welcome to My Gardener's Black Book</p>
-          <p className="login-new-user-message">New user?&nbsp;<a href="/registration">Create an account</a></p>
+          <p id="login-message">Welcome to My Gardener's Black Book</p>
+          <p id="login-registration-message">New user?&nbsp;<a href="/registration">Create an account</a></p>
           <div id="login-inputs-container">
-            <div className="login-input">
-              <input 
-                type="text" 
-                name="username" 
-                placeholder="Username"
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="login-input">
-              <input 
-                type="password"
-                name="password" 
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </div>
+            <input className="login-input"
+              type="text" 
+              name="username" 
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+            <input className="login-input"
+              type="password"
+              name="password" 
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+            />
           </div>
-          <p className="login-error">{loginError}</p>
+          <p id="login-error">{loginError}</p>
           <input id="login-submit" type="submit" value="Sign In"/>
         </form>
-      </div>
+      </section>
     </main>
   );
 }

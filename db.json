@@ -162,12 +162,7 @@
       "id": 2,
       "username": "VeggieMaster34",
       "password": "Veggie34",
-      "favorites": [
-        1,
-        3,
-        4,
-        2
-      ]
+      "favorites": []
     },
     {
       "id": 3,

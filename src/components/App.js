@@ -16,6 +16,7 @@ function App() {
   const [userFavorites, setUserFavorites] = useState([]);
   const [isActive, setIsActive] = useState([true]);
 
+  //Fetches plant data from server and sets plants state to fetched plant data:
   useEffect(() => {
     fetch("http://localhost:3000/plants")
     .then(r => r.json())
@@ -25,6 +26,7 @@ function App() {
     })
   }, [setIsLoggedIn]);
 
+  //Fetches current user's data from server if current user is defined:
   useEffect(() => {
     if (currentUser.id !== undefined) return (
       fetch(`http://localhost:3000/users/${currentUser.id}`)
@@ -33,21 +35,22 @@ function App() {
     );
   }, [currentUser.id, setUserFavorites, setIsLoggedIn]);
 
+  //Sets current user data to currently logged in user and allows user access to the database"
   function handleLogin(user) {
     setIsLoggedIn(!isLoggedIn);
     setUserFavorites(user.favorites);
     setCurrentUser(user);
   }
 
+  //Logs the current user out and redirects to the login page:
   function handleLogout() {
     setIsLoggedIn(false);
   }
 
-  //Adds new plant to plant data and resets Dashboard tab to 'Database':
+  //Adds new plant to server and resets Dashboard 'Database' tab active status to true:
   function handleFormSubmit(newPlant) {
     setFilteredPlants([...plants, newPlant]);
-    
-    return setIsActive({ 0: true });
+    setIsActive({ 0: true });
   }
 
   return (
@@ -65,7 +68,7 @@ function App() {
               <Login onLogin={handleLogin} />
             </Route>
             <Route exact path="/registration">
-              <Registration onLogin={handleLogin} />
+              <Registration />
             </Route>
             <Route exact path="/favorites">
               <Favorites 

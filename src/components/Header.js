@@ -1,20 +1,20 @@
 import React from "react";
 import Dashboard from "./Dashboard";
 
-function Header({ isLoggedIn, currentUser, onLogout, isActive, setIsActive }) {
+function Header(props) {
   return (
     <header id="app-header">
-      <div className="header-title">
+      <div id="header-title">
         <img src="./images/icons/mgbb-logo.png" alt="MGBB Logo"/>
         <h1>MGBB</h1>
       </div>
-      {isLoggedIn ? 
-        <Dashboard 
-          currentUser={currentUser} 
-          onLogout={onLogout} 
-          isActive={isActive} 
-          setIsActive={setIsActive}
-        /> : null}
+      {/* The Dashboard component only displays when a user is logged in */}
+      {props.isLoggedIn ? <Dashboard
+        onLogout={props.onLogout} 
+        isActive={props.isActive} 
+        setIsActive={props.setIsActive} 
+        currentUser={props.currentUser} 
+      /> : null}
     </header>
   );
 }

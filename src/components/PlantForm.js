@@ -16,12 +16,15 @@ function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
 
     const history = useHistory();
 
+    //Redirects user back to login page if user's login state is set to false:
     if (!isLoggedIn) return <Redirect to="/login" />;
 
+    //Controls form input fields:
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value});
     }
 
+    //Handles sunlight and water icon bars in post form and sets form data to currently selected icon level:
     function handleIconChange(e) {
         let iconArray = [...e.target.parentElement.children];
 
@@ -40,27 +43,36 @@ function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
         return setFormData({...formData, [e.target.parentElement.getAttribute('name')]: iconLevel});
     }
 
+    //Handles seasons icon bar in post form and sets form data to currently selected season icons:
     function handleSeasonChange(e) {
         let seasonsArray = activeSeasons;
 
+        //Adds/removes selected season icon to/from form data:
         if (activeSeasons.includes(e.target.textContent)) {
-            seasonsArray = [...activeSeasons.filter(icon => icon !== e.target.textContent)]
+            seasonsArray = [...activeSeasons.filter(icon => icon !== e.target.textContent)];
             setActiveSeasons(seasonsArray);
         } else {
-            seasonsArray = [ ...activeSeasons, e.target.textContent ]
+            seasonsArray = [ ...activeSeasons, e.target.textContent ];
             setActiveSeasons(seasonsArray);
         }
 
         return setFormData({...formData, season: seasonsArray.join('')});
     }
 
+    //Posts new plant to server and redirects to PlantsPage if all form inputs are filled and throws error if not:
     function handleSubmit(e) {
         e.preventDefault();
 
         if (Object.values(formData).includes('')) {
             return setFormError('All input fields must be filled before posting');
         } else {
-            fetch('http://localhost:3000/plants', {
+            return postPlant() & history.push("/");
+        }
+    }
+
+    //Sends post request to server with new plant data and calls handleFormSubmit function in App.js:
+    function postPlant() {
+        fetch('http://localhost:3000/plants', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -69,9 +81,6 @@ function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
             })
             .then(r => r.json())
             .then(newPlant => onSubmit(newPlant));
-
-            return history.push("/");
-        }
     }
 
     return (
@@ -79,68 +88,62 @@ function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
             <form id="app-post-form" onSubmit={handleSubmit}>
                 <h1>POST FORM</h1>
                 <p className="post-form-message">Post a new plant to the MGBB database by filling out the form below:</p>
-                <div id="post-inputs-container">
+                <section id="post-inputs-container">
                     <div id="text-input-div">
                         <label htmlFor="name">Plant Name</label>
-                        <div className="post-input">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                value={formData.name}
-                                onChange={handleChange}
-                            />
-                        </div>
+                        <input className="post-input"
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
                         <label htmlFor="image">Plant Image</label>
-                        <div className="post-input">
-                            <input
-                                type="text"
-                                name="image"
-                                placeholder="Image URL"
-                                value={formData.image}
-                                onChange={handleChange}
-                            />
-                        </div>
+                        <input className="post-input"
+                            type="text"
+                            name="image"
+                            placeholder="Image URL"
+                            value={formData.image}
+                            onChange={handleChange}
+                        />
                         <label htmlFor="description">Description</label>
-                        <div className="post-input-description">
-                            <textarea
-                                id=""
-                                name="description"
-                                placeholder="Description"
-                                maxLength="230"
-                                value={formData.description}
-                                onChange={handleChange}
-                            />
-                        </div>
+                        <textarea className="post-textarea"
+                            id=""
+                            name="description"
+                            placeholder="Description"
+                            maxLength="230"
+                            value={formData.description}
+                            onChange={handleChange}
+                        />
                     </div>
                     <div id="icon-input-div">
                         <label htmlFor="sunlight">Sunlight Selector</label>
                         <div className='icon-input' name="sunlight">
-                            <p className="icon" onClick={handleIconChange}>☀️</p>
-                            <p className="icon" onClick={handleIconChange}>☀️</p>
-                            <p className="icon" onClick={handleIconChange}>☀️</p>
-                            <p className="icon" onClick={handleIconChange}>☀️</p>
-                            <p className="icon" onClick={handleIconChange}>☀️</p>
+                            <i className="icon" onClick={handleIconChange}>☀️</i>
+                            <i className="icon" onClick={handleIconChange}>☀️</i>
+                            <i className="icon" onClick={handleIconChange}>☀️</i>
+                            <i className="icon" onClick={handleIconChange}>☀️</i>
+                            <i className="icon" onClick={handleIconChange}>☀️</i>
                         </div>
                         <label htmlFor="water">Water Selector</label>
                         <div className='icon-input' name="water">
-                            <p className="icon" onClick={handleIconChange}>💧</p>
-                            <p className="icon" onClick={handleIconChange}>💧</p>
-                            <p className="icon" onClick={handleIconChange}>💧</p>
-                            <p className="icon" onClick={handleIconChange}>💧</p>
-                            <p className="icon" onClick={handleIconChange}>💧</p>
+                            <i className="icon" onClick={handleIconChange}>💧</i>
+                            <i className="icon" onClick={handleIconChange}>💧</i>
+                            <i className="icon" onClick={handleIconChange}>💧</i>
+                            <i className="icon" onClick={handleIconChange}>💧</i>
+                            <i className="icon" onClick={handleIconChange}>💧</i>
                         </div>
                         <label htmlFor="season">Season Selector</label>
                         <div className='season-input' name="season">
-                            <p className={activeSeasons.find(icon => icon === '🌱') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🌱</p>
-                            <p className={activeSeasons.find(icon => icon === '🏝️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🏝️</p>
-                            <p className={activeSeasons.find(icon => icon === '🍂') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🍂</p>
-                            <p className={activeSeasons.find(icon => icon === '❄️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>❄️</p>
+                            <i className={activeSeasons.includes('🌱') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🌱</i>
+                            <i className={activeSeasons.includes('🏝️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🏝️</i>
+                            <i className={activeSeasons.includes('🍂') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>🍂</i>
+                            <i className={activeSeasons.includes('❄️') ? 'icon-active' : 'icon'} onClick={handleSeasonChange}>❄️</i>
                         </div>
                         <p className="form-error">{formError}</p>
                         <input id="post-submit" type="submit" value="POST"/>
                     </div>
-                </div>
+                </section>
             </form>
         </main>
     );

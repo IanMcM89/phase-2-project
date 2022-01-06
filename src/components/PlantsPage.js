@@ -2,26 +2,29 @@ import React from "react";
 import PlantCard from "./PlantCard";
 import { Redirect } from "react-router-dom";
 
-function PlantsPage({ plants, isLoggedIn, setIsLoggedIn, currentUser, userFavorites, setUserFavorites}) {
-  if (!isLoggedIn) return <Redirect to="/login" />;
+function PlantsPage(props) {
+  //Redirects user back to login page if user's login state is set to false:
+  if (!props.isLoggedIn) return <Redirect to="/login" />;
 
+  //Prevents unauthorized return to user's portal by logging user out if browser back button is clicked:
   window.addEventListener('popstate', () => {
-    setIsLoggedIn(false);
+    props.setIsLoggedIn(false);
   });
 
-  const plantsToBeDisplayed = plants.map(plant => 
+  //Returns PlantCard component for each plant in fetched plants data:
+  const plantsToBeDisplayed = props.plants.map(plant => 
     <PlantCard 
       key={plant.id} 
       plant={plant} 
-      currentUser={currentUser} 
-      userFavorites={userFavorites} 
-      setUserFavorites={setUserFavorites}
+      currentUser={props.currentUser} 
+      userFavorites={props.userFavorites} 
+      setUserFavorites={props.setUserFavorites}
     />
   );
 
   return (
     <main id="app-main">
-      <div className="plant-card-table">
+      <div id="plant-card-table">
           {plantsToBeDisplayed}
       </div>
     </main>

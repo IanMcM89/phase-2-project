@@ -22,7 +22,7 @@ body {
   height: 15vh;
 }
 
-.header-title {
+#header-title {
   background: white;
   display: flex;
   justify-content: center;
@@ -32,13 +32,13 @@ body {
   padding-left: 1%;
 }
 
-.header-title img {
+#header-title img {
   width: 19%;
   height: auto;
   margin: 3%;
 }
 
-.header-title h1 {
+#header-title h1 {
   display: flex;
   align-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ body {
   margin: 3%;
 }
 
-#header-dashboard {
+#dashboard {
   background-color: black;
   color: white;
   display: flex;
@@ -61,7 +61,7 @@ body {
   padding-right: 1%;
 }
 
-#header-dashboard h2 {
+#dashboard h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@ body {
   margin: 0;
 }
 
-#header-dashboard button {
+#dashboard button {
   display: flex;
   background: black;
   border: none;
@@ -94,11 +94,11 @@ body {
   margin-right: 2%;
 }
 
-#header-dashboard button:hover {
+#dashboard button:hover {
   border-bottom: lightgray solid 2px;
 }
 
-#header-dashboard button.active {
+#dashboard button.active {
   border-bottom: forestgreen solid 3px;
 }
 
@@ -109,14 +109,14 @@ body {
   margin: 0;
 }
 
-#app-login-div {
+#login-container {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 75vh;
 }
 
-#app-login-form {
+#login-form {
   background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -128,7 +128,7 @@ body {
   margin-bottom: 3%;
 }
 
-#app-login-form h1 {
+#login-form h1 {
   background: black;
   color: white;
   display: flex;
@@ -140,7 +140,7 @@ body {
   margin: 0;
 }
 
-.login-message {
+#login-message {
   color: forestgreen;
   display: flex;
   justify-content: center;
@@ -152,7 +152,7 @@ body {
   margin: 1%;
 }
 
-.login-new-user-message {
+#login-registration-message {
   color: gray;
   display: flex;
   justify-content: center;
@@ -173,17 +173,13 @@ body {
 }
 
 .login-input {
-  width: auto;
-  height: fit-content;
-  margin: 5%
-}
-
-.login-input input {
   font-family: inherit;
   width: 100%;
+  height: fit-content;
+  margin: 5%;
 }
 
-.login-error {
+#login-error {
   color: red;
   display: flex;
   justify-content: center;
@@ -201,7 +197,7 @@ body {
   margin: auto;
 }
 
-.plant-card-table {
+#plant-card-table {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -346,28 +342,18 @@ body {
 
 .post-input {
   display: flex;
+  font-family: inherit;
   width: 98%;
   height: 12%;
   margin: 2%
 }
 
-.post-input input {
-  font-family: inherit;
-  width: 100%;
-  height: auto;
-}
-
-.post-input-description {
+.post-textarea {
   display: flex;
+  font-family: inherit;
   width: 98%;
   height: 65%;
   margin: 2%
-}
-
-.post-input-description textarea {
-  font-family: inherit;
-  width: 100%;
-  height: auto;
 }
 
 #icon-input-div {
@@ -400,7 +386,8 @@ body {
   margin: 2%
 }
 
-.icon-input p {
+.icon-input i {
+  font-style: normal;
   font-size: 20px;
   width: 8%;
   border: 0;
@@ -417,7 +404,8 @@ body {
   margin: 2%
 }
 
-.season-input p {
+.season-input i {
+  font-style: normal;
   font-size: 20px;
   width: 10%;
 }
