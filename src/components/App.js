@@ -54,7 +54,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div id="app">
       <BrowserRouter>
         <Header 
           isLoggedIn={isLoggedIn} 

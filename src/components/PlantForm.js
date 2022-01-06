@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
+import "../css/plantForm.css";
 
 function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
     const [activeSeasons, setActiveSeasons] = useState([]);

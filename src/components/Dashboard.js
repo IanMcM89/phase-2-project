@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
+import "../css/header.css";
 
 function Dashboard(props) {
     const history = useHistory();

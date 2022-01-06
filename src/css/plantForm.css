@@ -1,0 +1,173 @@
+#app-post-form {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    height: auto;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+  
+#app-post-form h1 {
+    background: darkgreen;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    width: 100%;
+    height: 20%;
+    margin: 0;
+}
+  
+.post-form-message {
+    color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: bold;
+    width: 96%;
+    height: 8%;
+    margin: 2%;
+    margin-bottom: 0;
+}
+  
+#post-inputs-container {
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 66%;
+    margin: 2%;
+}
+  
+#text-input-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+  
+#text-input-div label {
+    color: forestgreen;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 96%;
+    height: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.post-input {
+    display: flex;
+    font-family: inherit;
+    width: 98%;
+    height: 12%;
+    margin: 2%
+}
+  
+.post-textarea {
+    display: flex;
+    font-family: inherit;
+    width: 98%;
+    height: 65%;
+    margin: 2%
+}
+  
+#icon-input-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+  
+#icon-input-div label {
+    color: forestgreen;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.icon-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: 10%;
+    margin: 2%
+}
+  
+.icon-input i {
+    font-style: normal;
+    font-size: 20px;
+    width: 8%;
+    border: 0;
+}
+  
+.season-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: 8%;
+    margin: 2%
+}
+  
+.season-input i {
+    font-style: normal;
+    font-size: 20px;
+    width: 10%;
+}
+  
+.icon {
+    justify-content: center;
+    filter: grayscale(1);
+    cursor: pointer;
+}
+  
+.icon:hover {
+    filter: grayscale(0.75);
+    cursor: pointer;
+}
+  
+.icon-active {
+    justify-content: center;
+    filter: grayscale(0);
+    cursor: pointer;
+}
+  
+.form-error {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    width: 80%;
+    height: 46%;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+#post-submit {
+    font-family: inherit;
+    background-color: yellowgreen;
+    font-weight: bold;
+    width: 50%;
+    height: 10%;
+    margin: auto;
+    margin-bottom: 2%;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { withRouter, useHistory } from 'react-router-dom';
+import "../css/login.css";
 
 function Registration() {
   const [signUpError, setSignUpError] = useState('');

@@ -1,5 +1,6 @@
 import React from "react";
 import Dashboard from "./Dashboard";
+import "../css/header.css";
 
 function Header(props) {
   return (

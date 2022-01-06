@@ -1,6 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 import { Redirect } from "react-router-dom";
+import "../css/plants.css";
 
 function PlantsPage(props) {
   //Redirects user back to login page if user's login state is set to false:

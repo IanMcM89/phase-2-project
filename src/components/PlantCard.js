@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "../css/plants.css";
 
 function PlantCard({ plant, currentUser, userFavorites, setUserFavorites }) {
   //Sets favorited state of plant card to true only if the user's favorites array includes the plant's id:
