@@ -2,7 +2,7 @@ import React from "react";
 import PlantCard from "./PlantCard";
 import { Redirect } from "react-router-dom";
 
-function FavoritesPage({ plants, isLoggedIn, currentUser, userFavorites, setUserFavorites}) {
+function Favorites({ plants, isLoggedIn, currentUser, userFavorites, setUserFavorites}) {
     if (!isLoggedIn) return <Redirect to="/login" />;
 
     const favoritedPlants = plants.filter(plant => userFavorites.includes(plant.id));
@@ -26,4 +26,4 @@ function FavoritesPage({ plants, isLoggedIn, currentUser, userFavorites, setUser
     );
 }
 
-export default FavoritesPage;
+export default Favorites;

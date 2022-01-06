@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter, useHistory } from 'react-router-dom';
 
-function CreateAccountPage({ onLogin }) {
+function Registration({ onLogin }) {
   const [signUpError, setSignUpError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
@@ -106,4 +106,4 @@ function CreateAccountPage({ onLogin }) {
   )
 }
 
-export default withRouter(CreateAccountPage);
+export default withRouter(Registration);

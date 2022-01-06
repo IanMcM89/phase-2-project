@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter, useHistory } from 'react-router-dom';
 
-function LoginPage({ onLogin }) {
+function Login({ onLogin }) {
   const [loginError, setLoginError] = useState('');
   const [formData, setFormData] = useState({ username: '', password: '' });
   
@@ -41,7 +41,7 @@ function LoginPage({ onLogin }) {
         <form id="app-login-form" onSubmit={handleSubmit}>
           <h1>USER LOGIN</h1>
           <p className="login-message">Welcome to My Gardener's Black Book</p>
-          <p className="login-new-user-message">New user?&nbsp;<a href="/create-account">Create an account</a></p>
+          <p className="login-new-user-message">New user?&nbsp;<a href="/registration">Create an account</a></p>
           <div id="login-inputs-container">
             <div className="login-input">
               <input 
@@ -70,4 +70,4 @@ function LoginPage({ onLogin }) {
   );
 }
 
-export default withRouter(LoginPage);
+export default withRouter(Login);

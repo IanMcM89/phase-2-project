@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import LoginPage from "./LoginPage";
-import CreateAccountPage from "./CreateAccountPage";
+import Login from "./Login";
+import Registration from "./Registration";
 import PlantsPage from "./PlantsPage";
-import FavoritesPage from "./FavoritesPage";
-import NewPlantForm from "./NewPlantForm";
+import Favorites from "./Favorites";
+import PlantForm from "./PlantForm";
 import Footer from "./Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -62,13 +62,13 @@ function App() {
         />
           <Switch>
             <Route exact path="/login">
-              <LoginPage onLogin={handleLogin} />
+              <Login onLogin={handleLogin} />
             </Route>
-            <Route exact path="/create-account">
-              <CreateAccountPage onLogin={handleLogin} />
+            <Route exact path="/registration">
+              <Registration onLogin={handleLogin} />
             </Route>
             <Route exact path="/favorites">
-              <FavoritesPage 
+              <Favorites 
                 plants={filteredPlants}
                 isLoggedIn={isLoggedIn} 
                 currentUser={currentUser}
@@ -77,7 +77,7 @@ function App() {
               />
             </Route>
             <Route exact path="/post">
-              <NewPlantForm 
+              <PlantForm 
                 isLoggedIn={isLoggedIn}
                 currentUser={currentUser}
                 onSubmit={handleFormSubmit}

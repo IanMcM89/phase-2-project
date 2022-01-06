@@ -1,5 +1,5 @@
 import React from "react";
-import UserDashBoard from "./UserDashboard";
+import Dashboard from "./Dashboard";
 
 function Header({ isLoggedIn, currentUser, onLogout, isActive, setIsActive }) {
   return (
@@ -9,7 +9,7 @@ function Header({ isLoggedIn, currentUser, onLogout, isActive, setIsActive }) {
         <h1>MGBB</h1>
       </div>
       {isLoggedIn ? 
-        <UserDashBoard 
+        <Dashboard 
           currentUser={currentUser} 
           onLogout={onLogout} 
           isActive={isActive} 

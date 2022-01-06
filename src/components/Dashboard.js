@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
 
-function UserDashBoard({currentUser, onLogout, isActive, setIsActive }) {
+function Dashboard({currentUser, onLogout, isActive, setIsActive }) {
     const history = useHistory();
 
     function handleClick(e) {
@@ -29,4 +29,4 @@ function UserDashBoard({currentUser, onLogout, isActive, setIsActive }) {
     );
 }
 
-export default UserDashBoard;
+export default Dashboard;

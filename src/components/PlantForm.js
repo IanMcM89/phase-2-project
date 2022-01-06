@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 
-function NewPlantForm({ isLoggedIn, currentUser, onSubmit }) {
+function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
     const [activeSeasons, setActiveSeasons] = useState([]);
     const [formError, setFormError] = useState('');
     const [formData, setFormData] = useState({
@@ -146,4 +146,4 @@ function NewPlantForm({ isLoggedIn, currentUser, onSubmit }) {
     );
 }
 
-export default NewPlantForm;
+export default PlantForm;
