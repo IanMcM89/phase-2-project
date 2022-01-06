@@ -5,7 +5,7 @@ function Header({ isLoggedIn, currentUser, onLogout, isActive, setIsActive }) {
   return (
     <header id="app-header">
       <div className="header-title">
-        <img src="./images/mgbb-logo.png" alt="MGBB Logo"/>
+        <img src="./images/icons/mgbb-logo.png" alt="MGBB Logo"/>
         <h1>MGBB</h1>
       </div>
       {isLoggedIn ? 
