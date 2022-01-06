@@ -181,18 +181,6 @@
       "username": "gardengurl88",
       "password": "password88",
       "favorites": []
-    },
-    {
-      "id": 6,
-      "username": "IanMcM89",
-      "password": "password",
-      "favorites": [
-        1,
-        2,
-        4,
-        7,
-        6
-      ]
     }
   ]
 }
