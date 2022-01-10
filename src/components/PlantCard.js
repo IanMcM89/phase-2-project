@@ -1,41 +1,45 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../css/plants.css";
 
-function PlantCard({ plant, currentUser, userFavorites, setUserFavorites }) {
-  //Sets favorited state of plant card to true only if the user's favorites array includes the plant's id:
-  const [isFavorited, setIsFavorited] = useState(userFavorites.find(id => id === plant.id));
+function PlantCard({ plant, onDelete }) {
+  const [likes, setLikes] = useState(plant.likes);
 
-  function handleFavoriteClick() {
-    //Sets favorited state to opposite of current state:
-    setIsFavorited(!isFavorited);
+  //Sends patch request to server with updated likes and changes likes state:
+  function handleClick() {
+    plant.likes++;
 
-    //Adds plant id to user's favorites if favorite state is true and filters out the id if false: 
-    const patch = !isFavorited ? [...userFavorites, plant.id] : userFavorites.filter(id => id !== plant.id);
-
-    return patchPlant(patch);
-  }
-
-  //Sends patch request to server and updates current user's favorites array:
-  function patchPlant(patch) {
-    fetch(`http://localhost:3000/users/${currentUser.id}`, {
+    fetch(`http://localhost:3000/plants/${plant.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        favorites: patch
+        likes: plant.likes
       }),
     })
     .then(r => r.json())
-    .then(updatedUser => setUserFavorites(updatedUser.favorites));
+    .then(patchedPlant => console.log(patchedPlant))
+
+    return setLikes(plant.likes);
+  }
+
+  //Sends delete request to server for plant ID and calls onDelete callback to remove plant card div:
+  function handleDeleteClick() {
+    fetch(`http://localhost:3000/plants/${plant.id}`, {
+      method: "DELETE",
+    })
+    .then(r => r.json())
+    .then(() => onDelete(plant.id));
   }
 
   return (
     <div className="plant-card">
       <section className="plant-card-title">
-        <h3>{plant.name}</h3>
-        <p>Posted By: <span>{plant.poster}</span></p>
-        <button className={isFavorited ? 'favorite-button-active' : 'favorite-button'} onClick={handleFavoriteClick}>⭐</button>
+        <h2>{plant.name}</h2>
+        <div>
+          <button className="like-button" onClick={handleClick}>{likes} 👍</button>
+          <button className="delete-button" onClick={handleDeleteClick}>❌</button>
+        </div>
       </section>
       <section className="plant-card-content">
         <div className="plant-card-image">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../css/plantForm.css";
 
-function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
+function PlantForm({ onSubmit }) {
     const [activeSeasons, setActiveSeasons] = useState([]);
     const [formError, setFormError] = useState('');
     const [formData, setFormData] = useState({
@@ -12,13 +12,10 @@ function PlantForm({ isLoggedIn, currentUser, onSubmit }) {
         water: '',
         season: '',
         description: '',
-        poster: currentUser.username
+        likes: 0
     });
 
     const history = useHistory();
-
-    //Redirects user back to login page if user's login state is set to false:
-    if (!isLoggedIn) return <Redirect to="/login" />;
 
     //Controls form input fields:
     function handleChange(e) {
