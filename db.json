@@ -8,7 +8,7 @@
       "water": "💧💧💧",
       "season": "🌱🍂",
       "description": "Cilantro is an herb that grows best in full sun and well drained soil, but they can take some shade. Cilantro requires about an inch of water per week.",
-      "poster": "PlanterDan77"
+      "likes": 10
     },
     {
       "id": 2,
@@ -18,17 +18,17 @@
       "water": "💧💧💧",
       "season": "🌱",
       "description": "Citrus plants prefer warmer climates with full to partial sun and can grow in almost any soil with good drainage. They need daily watering when newly planted and once or twice a week once matured.",
-      "poster": "FloridaMan2020"
+      "likes": 7
     },
     {
       "id": 3,
       "name": "Rosemary",
       "image": "./images/plants/rosemary.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
+      "sunlight": "☀️☀️☀️☀️",
       "water": "💧💧",
       "season": "🌱🏝️",
       "description": "Rosemary is an herb that grows best in full sun and well drained soil. This herb takes regular watering until it is established and can then take less frequent watering.",
-      "poster": "PlanterDan77"
+      "likes": 10
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "water": "💧💧💧",
       "season": "🏝️",
       "description": "Basil is a tropical herb that grows best in full sun and well drained soil and requires about an inch of water per week. Basil grown in containers may need more frequent watering.",
-      "poster": "PlanterDan77"
+      "likes": 16
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "water": "💧💧",
       "season": "🌱🏝️",
       "description": "Thyme is an herb that grows best in full sun and well drained soil. Can be grown in pots but will flourish in gardens. Thyme can thrive in colder months and requires little watering.",
-      "poster": "PlanterDan77"
+      "likes": 15
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "water": "💧💧",
       "season": "🌱🍂",
       "description": "Lettuce is a cool weather crop and is best grown in spring and fall. It grows best in loose soil with good drainage and requires water about twice a week. An average level of sunlight will suffice.",
-      "poster": "VeggieMaster34"
+      "likes": 2
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "water": "💧💧💧",
       "season": "🌱🏝️",
       "description": "Bell peppers are warm weather crops that require lots of sun. In high temperatures they may need some shade during the day. Add about one to two inches of water per week.",
-      "poster": "VeggieMaster34"
+      "likes": 6
     },
     {
       "id": 8,
@@ -78,37 +78,37 @@
       "water": "💧💧💧",
       "season": "🌱🍂",
       "description": "Onions are best cultivated in fertile soils that are well-drained and require full to partial sun. In suitable climates, onions need about an inch of water per week",
-      "poster": "SeedlingSarah2021"
+      "likes": 3
     },
     {
       "id": 9,
+      "name": "Tomato",
+      "image": "./images/plants/tomato.jpg",
+      "sunlight": "☀️☀️☀️☀️☀️",
+      "water": "💧💧💧💧",
+      "season": "🌱🏝️",
+      "description": "Tomatoes grow well in well-drained soil and require full sun exposure. Tomatoes can grow well both in pots and in the ground. Harvest once red appears on the skin of the tomato.",
+      "likes": 11
+    },
+    {
+      "id": 10,
       "name": "Celery",
       "image": "./images/plants/celery.jpg",
       "sunlight": "☀️☀️☀️",
       "water": "💧💧💧💧",
       "season": "🌱🏝️🍂❄️",
       "description": "Celery requires plenty of water, and protection from high temperatures. Grow celery as a winter crop in the South, a summer crop in the North, and a fall crop elsewhere.",
-      "poster": "VeggieMaster34"
-    },
-    {
-      "id": 10,
-      "name": "Carrot",
-      "image": "./images/plants/carrot.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
-      "water": "💧💧💧",
-      "season": "🌱",
-      "description": "Carrots prefer full sun but relatively cool soil. They can grow in light shade and are great in gardens. If rainfall is scarce, you will need to water the soil completely.",
-      "poster": "VeggieMaster34"
+      "likes": 8
     },
     {
       "id": 11,
-      "name": "Potato",
-      "image": "./images/plants/potato.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
+      "name": "Orange",
+      "image": "./images/plants/orange.jpg",
+      "sunlight": "☀️☀️☀️",
       "water": "💧💧💧",
       "season": "🌱",
-      "description": "Potatoes grow best in cool, well-drained, loose soil. They require full sun and need between 1-2 inches of water per week.",
-      "poster": "gardengurl88"
+      "description": "Citrus plants prefer warmer climates with full to partial sun and can grow in almost any soil with good drainage. They need daily watering when newly planted and once or twice a week once matured.",
+      "likes": 4
     },
     {
       "id": 12,
@@ -118,81 +118,37 @@
       "water": "💧💧💧",
       "season": "🍂",
       "description": "Garlic is easy to grow and can be grown year-round in mild climates. In colder climates, cloves are best planted about six weeks before the soil freezes. Harvest is in late spring or early summer.",
-      "poster": "gardengurl88"
+      "likes": 6
     },
     {
       "id": 13,
+      "name": "Carrot",
+      "image": "./images/plants/carrot.jpg",
+      "sunlight": "☀️☀️☀️☀️☀️",
+      "water": "💧💧💧",
+      "season": "🌱",
+      "description": "Carrots prefer full sun but relatively cool soil. They can grow in light shade and are great in gardens. If rainfall is scarce, you will need to water the soil completely.",
+      "likes": 7
+    },
+    {
+      "id": 14,
+      "name": "Potato",
+      "image": "./images/plants/potato.jpg",
+      "sunlight": "☀️☀️☀️☀️☀️",
+      "water": "💧💧💧",
+      "season": "🌱",
+      "description": "Potatoes grow best in cool, well-drained, loose soil. They require full sun and need between 1-2 inches of water per week.",
+      "likes": 6
+    },
+    {
+      "id": 15,
       "name": "Air Plant",
       "image": "./images/plants/air-plant.jpg",
       "sunlight": "☀️☀️",
       "water": "💧",
       "season": "🌱🏝️🍂❄️",
       "description": "Air plants are tropical plants that absorb moisture through their leaves. They can grow indoors if adequite humidity and indirect sunlight is provided. Water only about once per week.",
-      "poster": "SeedlingSarah2021"
-    },
-    {
-      "id": 14,
-      "name": "Orange",
-      "image": "./images/plants/orange.jpg",
-      "sunlight": "☀️☀️☀️",
-      "water": "💧💧💧",
-      "season": "🌱",
-      "description": "Citrus plants prefer warmer climates with full to partial sun and can grow in almost any soil with good drainage. They need daily watering when newly planted and once or twice a week once matured.",
-      "poster": "FloridaMan2020"
-    },
-    {
-      "id": 15,
-      "name": "Tomato",
-      "image": "./images/plants/tomato.jpg",
-      "sunlight": "☀️☀️☀️☀️☀️",
-      "water": "💧💧💧💧",
-      "season": "🌱🏝️",
-      "description": "Tomatoes grow well in well-drained soil and require full sun exposure. Tomatoes can grow well both in pots and in the ground. Harvest once red appears on the skin of the tomato.",
-      "poster": "PlanterDan77"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "SeedlingSarah2021",
-      "password": "dancer98",
-      "favorites": []
-    },
-    {
-      "id": 2,
-      "username": "VeggieMaster34",
-      "password": "Veggie34",
-      "favorites": []
-    },
-    {
-      "id": 3,
-      "username": "planterDan77",
-      "password": "password77",
-      "favorites": []
-    },
-    {
-      "id": 4,
-      "username": "FloridaMan2020",
-      "password": "fman2020",
-      "favorites": []
-    },
-    {
-      "id": 5,
-      "username": "gardengurl88",
-      "password": "password88",
-      "favorites": []
-    },
-    {
-      "id": 6,
-      "username": "IanMcM89",
-      "password": "password",
-      "favorites": [
-        1,
-        4,
-        5,
-        3,
-        6
-      ]
+      "likes": 3
     }
   ]
 }
