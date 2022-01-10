@@ -6,8 +6,8 @@
     align-content: flex-start;
     overflow-y: auto;
     width: 98%;
-    height: 95%;
-    margin: 1%;
+    height: auto;
+    margin: 2%;
 }
   
 .plant-card {
@@ -17,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 31.33%;
+    width: 31%;
     height: 45%;
     margin: 1%;
 }
@@ -31,50 +31,55 @@
     height: 15%;
 }
   
-.plant-card-title h3{
+.plant-card-title h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 40%;
+    height: auto;
+    margin: 0;
 }
-  
-.plant-card-title p {
+
+.plant-card-title div {
     display: flex;
-    font-size: small;
+    justify-content: right;
     align-items: center;
-    justify-content: center;
-    width: 50%;
+    text-align: center;
+    width: 60%;
+    height: auto;
+    margin: 0;
 }
   
-.plant-card-title p span{
-    color: yellowgreen;
-    display: flex;
-    font-size: small;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-  
-.favorite-button {
-    background: black;
-    border: none;
-    background-color: transparent;
+.like-button {
+    color: white;
     filter: grayscale(1);
-    display: flex;
-    font-size: larger;
-    justify-content: center;
-    width: 10%;
-}
-  
-.favorite-button-active {
-    filter: grayscale(0);
-    background: black;
     border: none;
     background-color: transparent;
+    font-size: medium;
     display: flex;
-    font-size: larger;
     justify-content: center;
-    width: 10%;
+    width: fit-content;
+}
+  
+.like-button-active {
+    color: white;
+    filter: grayscale(0);
+    border: none;
+    background-color: transparent;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
+.delete-button {
+    border: none;
+    background-color: transparent;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 }
 
 .plant-card-content {
@@ -118,7 +123,6 @@
   
 .plant-card-info p span{
     display: flex;
-    font-size: small;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
@@ -130,9 +134,9 @@
 .plant-card-info div {
     background: lightgray;
     outline: black 1px solid;
+    font-size: 11px;
     display: flex;
     overflow-y: auto;
-    font-size: 12px;
     font-family: inherit;
     width: 96%;
     height: 96%;

@@ -1,6 +1,6 @@
 #app-header {
     background-color: black;
-    outline: greenyellow 10px solid;
+    outline: chartreuse 10px solid;
     color: forestgreen;
     display: flex;
     width: 100vw;
@@ -12,9 +12,8 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 33%;
+    width: 33.5%;
     height: 100%;
-    padding-left: 1%;
 }
   
 #header-title img {
@@ -41,12 +40,22 @@
     justify-content: center;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 65%;
+    width: 66.5%;
     height: 100%;
-    padding-right: 1%;
 }
   
-#dashboard h2 {
+#dashboard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: inherit;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+#dashboard section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,18 +80,12 @@
     align-items: center;
     align-content: center;
     font-family: inherit;
-    width: 8.5%;
+    width: 20%;
     padding-top: 10px;
     padding-bottom: 7px;
-    margin: auto;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: auto 4% auto 4%;
 }
   
 #dashboard button:hover {
-    border-bottom: lightgray solid 2px;
-}
-  
-#dashboard button.active {
-    border-bottom: forestgreen solid 3px;
+    border-bottom: forestgreen solid 2px;
 }
