@@ -1,62 +1,32 @@
 # My Gardener's Black Book
 
-MGBB, or "My Gardener's Black Book", is a database containing information on different plants posted by various users. Users can post any plant they want to the database, using the app's post form, for other users to refer back to for quick tips and information for gardening projects.
+Welcome to My Gardener's Black Book! MGBB is a collection of data on various plants meant to act as a quick reference guide or "black book" for anyone interested in plant care looking for a basic understanding of a particular plant's care requirements.
 
 ## Features
 
 <ul>
-    <li>Database with information on various plants.</li>
+    <li>Database with various plants.</li>
     <li>Sunlight exposure recommendations.</li>
     <li>Basic water requirements for each plant.</li>
-    <li>Best season or seasons to start plants.</li>
+    <li>Best season or seasons to start planting.</li>
     <li>A short description of each plant and an image for reference.</li>
-    <li>Ability to add and remove a plant from a user's favorites tab.</li>
-    <li>Post form that allows a user to post a new plant to the MGBB database.</li>
+    <li>Ability to add and remove a plant to/from the database.</li>
+    <li>Show appreciation by liking a plant.</li>
 </ul>
 
 ## Usage
 
-A user can create a new user profile by clicking <strong>Create an Account</strong> on the login page, which will redirect the user to the registration page:
+A user can use the search bar on the bottom left hand side of the footer to search through the database to find information on a plant you are interested in. 
 
-<img 
-    src="/home/ian/code/labs/phase2/phase-2-project/public/images/readme/mgbb-register.png" 
-    alt="MGBB Registration Page"
-    width=75% align=center
-/>
+If a plant isn't available, use the post form to add it to our database! We're always looking for more plants and your submission could help others find what they are looking for down the road.
 
-After successful account creation, the user will be redirected to the login page where the new credentials can be used to access their user's profile by clicking the <strong>Sign In</strong> button:
+If you see a plant that you like, feel free to click the like button on the plant's information card to show your appreciation and most importantly, have fun! Happy planting!
 
-<img 
-    src="/home/ian/code/labs/phase2/phase-2-project/public/images/readme/mgbb-login.png"
-    alt="MGBB Login Page"
-    width=75% align=center
-/>
+## Preview
 
-The home page, or user profile page, consists of information cards for a variety of plants. Details include recommended sunlight exposure levels, for example, partial to full sun is equal to roughly four to five ☀️ icons on the scale. The more ☀️ icons (up to five), the more sun exposure the plant requires. The same can be said for the water, the more 💧 icons, the more frequent watering the plant requires. Figure a single 💧 icon is roughly once a week. The seasons icons represent the best seasons in which the plant should be cultivated. Some plants can be planted in all seasons, but these icons are the recommended seasons for best results and/or best harvesting once the plant is mature in the case of a vegetable. Seasons are intuitive (🌱 = Spring, 🏝️ = Summer, 🍂 = Fall and ❄️ = Winter). Each plant card also has a short description and an image for reference.
-
-<img 
-    src="/home/ian/code/labs/phase2/phase-2-project/public/images/readme/mgbb-home.png" 
-    alt="MGBB Home Page"
-    width=75% align=center
-/>
-
-Users can add plant cards to their favorites tab by clicking the ⭐ icon on the plant card. All favorited plants will be added to the favorites tab for quick reference in the future. To remove a plant from a user's favorites, simply cick the ⭐ icon again: 
-
-<img 
-    src="/home/ian/code/labs/phase2/phase-2-project/public/images/readme/mgbb-favorites.png" 
-    alt="MGBB Favorites Page"
-    width=75% align=center
-/>
-
-Users can also post a new plant card to the database by clicking the <strong>POST</strong> tab in the dashboard and filling out the required form inputs and clicking the <strong>POST</strong> button:
-
-<img 
-    src="/home/ian/code/labs/phase2/phase-2-project/public/images/readme/mgbb-post.png" 
-    alt="MGBB Post Form"
-    width=75% align=center
-/>
-
-To logout of a user profile, simply click the <strong>LOGOUT</strong> tab in the top right of the dashboard.
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/YZsGzDyDuWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
 ## Create React App
 
