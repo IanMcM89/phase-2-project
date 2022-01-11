@@ -16,17 +16,11 @@ Welcome to My Gardener's Black Book! MGBB is a collection of data on various pla
 
 ## Usage
 
-A user can use the search bar on the bottom left hand side of the footer to search through the database to find information on a plant you are interested in. 
-
-If a plant isn't available, use the post form to add it to our database! We're always looking for more plants and your submission could help others find what they are looking for down the road.
-
-If you see a plant that you like, feel free to click the like button on the plant's information card to show your appreciation and most importantly, have fun! Happy planting!
+A user can use the search bar on the bottom left hand side of the footer to search through the database to find information on a plant you are interested in. If a plant isn't available, use the post form to add it to our database! We're always looking for more plants and your submission could help others find what they are looking for down the road. If you see a plant that you like, feel free to click the like button on the plant's information card to show your appreciation and most importantly, have fun! Happy planting!
 
 ## Preview
 
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/YZsGzDyDuWc" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+[![MGBB Demo Link](http://img.youtube.com/vi/YZsGzDyDuWc/0.jpg)](https://www.youtube.com/embed/YZsGzDyDuWc)
 
 ## Create React App
 
